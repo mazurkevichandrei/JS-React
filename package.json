@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/mazurkevichandrei/JS-React/issues"
   },
-  "homepage": "https://github.com/mazurkevichandrei/JS-React#readme"
+  "homepage": "https://github.com/mazurkevichandrei/JS-React#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
 }
