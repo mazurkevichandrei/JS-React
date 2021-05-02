@@ -18,5 +18,8 @@
   "homepage": "https://github.com/mazurkevichandrei/JS-React#readme",
   "devDependencies": {
     "jest": "^26.6.3"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
