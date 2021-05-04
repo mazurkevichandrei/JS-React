@@ -1,4 +1,4 @@
-function filterArr(arr) {
+function filterArrSet(arr) {
     let data = []
     let result =[]
     arr.forEach((item) => data.push((item.split('').sort().join(''))))
@@ -6,4 +6,4 @@ function filterArr(arr) {
     mySet.forEach(item => result.push(item))
     return result
 }
-module.exports = filterArr;
+module.exports = filterArrSet;
