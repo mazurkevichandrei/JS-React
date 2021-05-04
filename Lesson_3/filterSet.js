@@ -1,5 +1,3 @@
-let arr = ['nap', 'pan', 'apn', 'hi']
-
 function filterArr(arr) {
     let data = []
     let result =[]
@@ -8,5 +6,4 @@ function filterArr(arr) {
     mySet.forEach(item => result.push(item))
     return result
 }
-
-console.log(filterArr(arr))
+module.exports = filterArr;
