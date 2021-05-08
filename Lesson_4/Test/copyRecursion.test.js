@@ -1,4 +1,4 @@
-const copyJson = require('./copyJson');
+const copyRecursion = require('./copyRecursion');
 
 let person = {
     name: 'Alex',
@@ -13,5 +13,5 @@ let person = {
 let newPerson = {};
 
 test("copy object person to newPerson", () => {
-    expect(copyJson(person, newPerson)).toBe(JSON.stringify(person));
+    expect(copyRecursion(person, newPerson)).toBe(JSON.stringify(person));
 });
