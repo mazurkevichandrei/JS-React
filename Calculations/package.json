@@ -1,23 +1,27 @@
 {
-  "name": "js_project",
-  "version": "0.0.1",
-  "description": "js_project",
+  "name": "calculations",
+  "version": "1.0.0",
+  "description": "Webpack_set",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
-    "dev": "webpack --mode development --config webpack.config.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mazurkevichandrei/JS-React.git"
   },
-  "author": "mazurkevich",
+  "keywords": [
+    "webpack"
+  ],
+  "author": "Mazurkevich",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mazurkevichandrei/JS-React/issues"
   },
   "homepage": "https://github.com/mazurkevichandrei/JS-React#readme",
   "devDependencies": {
-    "jest": "^26.6.3"
+    "webpack": "^5.37.1",
+    "webpack-cli": "^4.7.0"
   }
 }
