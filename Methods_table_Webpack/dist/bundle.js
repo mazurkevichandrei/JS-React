@@ -50,13 +50,33 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
+/***/ "./src/hideToolTip.js":
+/*!****************************!*\
+  !*** ./src/hideToolTip.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((evt) => {\r\n    const toolTipElement = document.querySelector('.tool-tip')\r\n    toolTipElement.style.visibility='hidden'\r\n});\n\n//# sourceURL=webpack://methods/./src/hideToolTip.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _renderElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderElement */ \"./src/renderElement.js\");\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n\r\n\r\nconst methods = Object.getOwnPropertyNames(Array.prototype)\r\nconst mutable = ['pop', 'push', 'shift', 'unshift', 'splice'];\r\nconst unmutable = methods.filter(item => !mutable.includes(item))\r\nconst methodsElement = document.querySelector('#methods')\r\n\r\nif (methodsElement) {\r\n    const mutableElement = document.createElement('ul')\r\n    const unmutableElement = document.createElement('ul')\r\n\r\n    const mutableHeader = document.createElement('h2')\r\n    mutableHeader.textContent = 'Mutable'\r\n    const unmutableHeader = document.createElement('h2')\r\n    unmutableHeader.textContent = 'Unmutable'\r\n\r\n    mutableElement.append(mutableHeader)\r\n    unmutableElement.append(unmutableHeader)\r\n\r\n    methodsElement.append(mutableElement)\r\n    methodsElement.append(unmutableElement)\r\n\r\n    methods.map(item => {\r\n        if (mutable.includes(item)) {\r\n            (0,_renderElement__WEBPACK_IMPORTED_MODULE_0__.default)(mutableElement,'mutable',item)\r\n        } else {\r\n            (0,_renderElement__WEBPACK_IMPORTED_MODULE_0__.default)(unmutableElement,'unmutable',item)\r\n        }\r\n    })\r\n}\r\n\r\nconst windowElement = document.querySelector('body')\r\nconst toolTipElement = document.createElement('div')\r\ntoolTipElement.classList.add('tool-tip')\r\nwindowElement.append(toolTipElement)\r\nconst itemsElements = document.querySelectorAll('li')\r\n\r\nconst showToolTip = function(evt){\r\n    toolTipElement.textContent = `${evt.target.textContent} is ${evt.target.dataset.type} method`\r\n    toolTipElement.style.visibility = 'visible'\r\n}\r\nconst hideToolTip = function(){\r\n    toolTipElement.style.visibility='hidden'\r\n}\r\nconst positionToolTip = function(evt){\r\n    toolTipElement.style.visibility = 'visible'\r\n    toolTipElement.style.top = evt.clientY + 'px'\r\n    toolTipElement.style.left = evt.clientX + 15 + 'px'\r\n}\r\nitemsElements.forEach(item => item.addEventListener('mouseenter',showToolTip))\r\nitemsElements.forEach(item => item.addEventListener('mouseleave', hideToolTip))\r\nitemsElements.forEach(item => item.addEventListener('mousemove', positionToolTip))\n\n//# sourceURL=webpack://methods/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _renderTable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderTable */ \"./src/renderTable.js\");\n/* harmony import */ var _showToolTip__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./showToolTip */ \"./src/showToolTip.js\");\n/* harmony import */ var _hideToolTip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./hideToolTip */ \"./src/hideToolTip.js\");\n/* harmony import */ var _positionToolTip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./positionToolTip */ \"./src/positionToolTip.js\");\n/* harmony import */ var _main_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main.css */ \"./src/main.css\");\n\r\n//import renderElement from './renderElement';\r\n\r\n\r\n\r\n\r\n\r\n\r\nconst methodsElement = document.querySelector('#methods')\r\n\r\nif (methodsElement) {\r\n    (0,_renderTable__WEBPACK_IMPORTED_MODULE_0__.default)()\r\n}\r\n\r\nconst windowElement = document.querySelector('body')\r\nconst toolTipElement = document.createElement('div')\r\ntoolTipElement.classList.add('tool-tip')\r\nwindowElement.append(toolTipElement)\r\nconst itemsElements = document.querySelectorAll('li')\r\n\r\nitemsElements.forEach(item => item.addEventListener('mouseenter',_showToolTip__WEBPACK_IMPORTED_MODULE_1__.default))\r\nitemsElements.forEach(item => item.addEventListener('mouseleave', _hideToolTip__WEBPACK_IMPORTED_MODULE_2__.default))\r\nitemsElements.forEach(item => item.addEventListener('mousemove', _positionToolTip__WEBPACK_IMPORTED_MODULE_3__.default))\n\n//# sourceURL=webpack://methods/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/positionToolTip.js":
+/*!********************************!*\
+  !*** ./src/positionToolTip.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((evt) => {\r\n    const toolTipElement = document.querySelector('.tool-tip')\r\n    toolTipElement.style.visibility = 'visible'\r\n    toolTipElement.style.top = evt.clientY + 'px'\r\n    toolTipElement.style.left = evt.clientX + 15 + 'px'\r\n});\n\n//# sourceURL=webpack://methods/./src/positionToolTip.js?");
 
 /***/ }),
 
@@ -67,6 +87,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _ren
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((target,elementType,data) => {\r\n    const element = document.createElement('li')\r\n    element.dataset.type = elementType\r\n    element.textContent = data\r\n    target.append(element)\r\n});\n\n//# sourceURL=webpack://methods/./src/renderElement.js?");
+
+/***/ }),
+
+/***/ "./src/renderTable.js":
+/*!****************************!*\
+  !*** ./src/renderTable.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _renderElement__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./renderElement */ \"./src/renderElement.js\");\n\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\r\n    const methods = Object.getOwnPropertyNames(Array.prototype)\r\n    const mutable = ['pop', 'push', 'shift', 'unshift', 'splice'];\r\n    const unmutable = methods.filter(item => !mutable.includes(item))\r\n    const methodsElement = document.querySelector('#methods')\r\n    \r\n    const mutableElement = document.createElement('ul')\r\n    const unmutableElement = document.createElement('ul')\r\n\r\n    const mutableHeader = document.createElement('h2')\r\n    mutableHeader.textContent = 'Mutable'\r\n    const unmutableHeader = document.createElement('h2')\r\n    unmutableHeader.textContent = 'Unmutable'\r\n\r\n    mutableElement.append(mutableHeader)\r\n    unmutableElement.append(unmutableHeader)\r\n\r\n    methodsElement.append(mutableElement)\r\n    methodsElement.append(unmutableElement)\r\n\r\n    methods.map(item => {\r\n        if (mutable.includes(item)) {\r\n            (0,_renderElement__WEBPACK_IMPORTED_MODULE_0__.default)(mutableElement,'mutable',item)\r\n        } else {\r\n            (0,_renderElement__WEBPACK_IMPORTED_MODULE_0__.default)(unmutableElement,'unmutable',item)\r\n        }\r\n    })\r\n});\n\n//# sourceURL=webpack://methods/./src/renderTable.js?");
+
+/***/ }),
+
+/***/ "./src/showToolTip.js":
+/*!****************************!*\
+  !*** ./src/showToolTip.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((evt) => {\r\n    const toolTipElement = document.querySelector('.tool-tip')\r\n    toolTipElement.textContent = `${evt.target.textContent} is ${evt.target.dataset.type} method`\r\n    toolTipElement.style.visibility = 'visible'\r\n});\n\n//# sourceURL=webpack://methods/./src/showToolTip.js?");
 
 /***/ })
 
