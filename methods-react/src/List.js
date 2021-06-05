@@ -13,7 +13,7 @@ const styles = {
     padding: '0',
     paddingLeft: '5px',
     border: '1px solid green',
-    maxWidth: '300px',
+    maxWidth: '400px',
     width: '100%'
   }
 }
