@@ -24,7 +24,7 @@ function List(props) {
     <ul style={styles.ul}>
     <h2>{props.header}</h2>
       {props.data.map(item => {
-        return <ListItem data = {item} key = {item.key}/>
+        return <ListItem data = {item} key = {item.key} type ={props.header}/>
       })}
     </ul>
   ); 
