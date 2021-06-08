@@ -30,7 +30,12 @@ function List(props) {
     let filter = evt.target.value
     setFilteredData(props.data.filter(item => item.name.includes(filter)))
   }
- 
+  
+  let resetFilter = () => {
+    setFilterValue('')
+    setFilteredData(props.data)
+  }
+
   return (
     <StyledUl type={props.header}>
     <h2>{props.header}</h2>
@@ -38,6 +43,7 @@ function List(props) {
     <input type='text' value = {filterValue}
     onChange={filterData}
     ></input>
+    <button onClick={resetFilter}>Refresh</button>
       {filteredData.map(item => {
         return <ListItem data = {item} key = {item.key} type ={props.header}/>
       })}
