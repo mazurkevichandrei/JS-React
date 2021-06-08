@@ -21,6 +21,8 @@ const StyledUl = styled.ul`
 `;
 
 function List(props) {
+  // const dataLenght = (props.data).length
+  // console.log(dataLenght)
   const [filteredData, setFilteredData] = useState(props.data)
   const [filterValue, setFilterValue] = useState('')
   
@@ -33,6 +35,7 @@ function List(props) {
   return (
     <StyledUl type={props.header}>
     <h2>{props.header}</h2>
+    <h3>{filteredData.length}/{(props.data).length}</h3>
     <input type='text' value = {filterValue}
     onChange={filterData}
     ></input>
