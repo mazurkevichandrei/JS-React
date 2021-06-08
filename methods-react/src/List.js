@@ -43,7 +43,7 @@ function List(props) {
     <input type='text' value = {filterValue}
     onChange={filterData}
     ></input>
-    <button onClick={resetFilter}>Refresh</button>
+    <button onClick={resetFilter}>Reset Filter</button>
       {filteredData.map(item => {
         return <ListItem data = {item} key = {item.key} type ={props.header}/>
       })}
