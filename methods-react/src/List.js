@@ -34,7 +34,7 @@ function List(props) {
   return (
     <StyledUl type={props.header}>
     <h2>{props.header}</h2>
-    <h3>{filteredData.length} from {(props.data).length} contain '<span style={Style.counter}>{filterValue}</span>'</h3>
+    <h3>{filteredData.length} from {(props.data).length} contains '<span style={Style.counter}>{filterValue}</span>'</h3>
     <input type='text' value = {filterValue}
     onChange={filterData}
     ></input>
