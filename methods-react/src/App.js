@@ -1,19 +1,7 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
-import List from './List'
-import ToolTip from './ToolTip'
-
-const styles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-      maxWidth: '800px',
-      width: '100%',
-      margin: '0 auto',
-      border: '1px solid black'
-    }
-  }
-
+import React from 'react';
+import List from './List';
+import ToolTip from './ToolTip';
+import Style from './style';
 
 function App (){
     const methods = Object.getOwnPropertyNames(Array.prototype);
@@ -32,7 +20,7 @@ function App (){
       })
 
     return (
-        <div style={styles.container}>
+        <div style={Style.container}>
             <List data={mutableData} header = 'Mutable'/>
             <List data={unmutableData} header = 'Unmutable'/>
             <ToolTip />

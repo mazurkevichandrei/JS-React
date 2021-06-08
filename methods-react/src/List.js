@@ -1,32 +1,33 @@
-import React from 'react'
-//import PropTypes from 'prop-types'
+import React from 'react';
 import './App.css';
-import ListItem from './ListItem'
+import ListItem from './ListItem';
+import styled, {css} from "styled-components";
 
-const styles = {
-  ul: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-    listStyle: 'none',
-    margin: '5px',
-    padding: '0',
-    paddingLeft: '5px',
-    border: '1px solid green',
-    maxWidth: '400px',
-    width: '100%'
-  }
-}
+const StyledUl = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  list-style: none;
+  margin: 5px;
+  padding: 0;
+  padding-left: 5px;
+  border: 2px solid khaki;
+  max-width: 400px;
+  width: 100%;
+    ${props => props.type === 'Mutable' && css`
+    border: 2px solid green;
+  `};
+`;
 
 function List(props) {
 
   return (
-    <ul style={styles.ul}>
+    <StyledUl type={props.header}>
     <h2>{props.header}</h2>
       {props.data.map(item => {
         return <ListItem data = {item} key = {item.key} type ={props.header}/>
       })}
-    </ul>
+    </StyledUl>
   ); 
 }
 
