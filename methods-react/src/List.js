@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import ListItem from './ListItem';
 import styled, {css} from "styled-components";
+import Style from './style';
 
 const StyledUl = styled.ul`
   display: flex;
@@ -33,7 +34,7 @@ function List(props) {
   return (
     <StyledUl type={props.header}>
     <h2>{props.header}</h2>
-    <h3>{filteredData.length} from {(props.data).length} contain '{filterValue}'</h3>
+    <h3>{filteredData.length} from {(props.data).length} contain '<span style={Style.counter}>{filterValue}</span>'</h3>
     <input type='text' value = {filterValue}
     onChange={filterData}
     ></input>

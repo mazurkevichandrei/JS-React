@@ -17,7 +17,10 @@ const Style = {
         width: '100%',
         margin: '0 auto',
         border: '1px solid black'
-      }
+      },
+    counter: {
+        color: 'red'
+    }
 }
 
 export default Style
