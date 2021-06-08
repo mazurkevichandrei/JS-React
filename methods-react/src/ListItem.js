@@ -1,24 +1,23 @@
 import React from 'react'
-// import ToolTip from './ToolTip'
-// import PropTypes from 'prop-types'
+import styled, {css} from "styled-components";
 
-const styles = {
-    li: {
-        padding: '5px',
-        margin: '5px 0',
-        background: 'khaki',
-        borderRadius: '3px',
-        cursor: 'pointer'
-    },
-    tooltip: {
-        visibility: 'hidden'
-    }
-}
+const StyledLi = styled.li`
+    padding: 5px;
+    margin: 5px 0;
+    background: khaki;
+    border-radius: 3px;
+    cursor: pointer;
+    ${props => props.type === 'Mutable' && css`
+    background: green;
+    color: white;
+  `};
+`;
 
 function ShowToolTip(evt){
     const tt = document.querySelector('.toolTip')
     tt.textContent = `${evt.target.textContent} is ${evt.target.dataset.type} method`
     tt.style.visibility = 'visible'
+    
 }
 function HideToolTip(){
     const tt = document.querySelector('.toolTip')
@@ -33,8 +32,7 @@ function MoveToolTip(evt){
 
 function ListItem (props) {
     return(
-        <li style={styles.li} data-type={props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip}
-        >{props.data.name}</li>
+        <StyledLi data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} type = {props.type}>{props.data.name}</StyledLi>
     )
 }
 

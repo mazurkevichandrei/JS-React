@@ -1,8 +1,9 @@
 import React from 'react';
+import Style from './style'
 
 function ToolTip() {
     return(
-        <div className='toolTip'></div>
+        <div style={Style.tooltip} className='toolTip'></div>
     )
 }
 
