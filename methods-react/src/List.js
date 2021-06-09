@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import ListItem from './ListItem';
 import styled, {css} from "styled-components";
-import Style from './style';
+import style from './style';
 
 const StyledUl = styled.ul`
   display: flex;
@@ -16,7 +16,7 @@ const StyledUl = styled.ul`
   border: 2px solid khaki;
   max-width: 400px;
   width: 100%;
-    ${props => props.type === 'Mutable' && css`
+    ${props => props.isMutable && css`
     border: 2px solid green;
   `};
 `;
@@ -25,27 +25,27 @@ function List(props) {
   const [filteredData, setFilteredData] = useState(props.data)
   const [filterValue, setFilterValue] = useState('')
   
-  let filterData = (evt) => {
+  const filterData = (evt) => {
     setFilterValue(evt.target.value)
-    let filter = evt.target.value
+    const filter = evt.target.value
     setFilteredData(props.data.filter(item => item.name.includes(filter)))
   }
   
-  let resetFilter = () => {
+  const resetFilter = () => {
     setFilterValue('')
     setFilteredData(props.data)
   }
 
   return (
-    <StyledUl type={props.header}>
+    <StyledUl isMutable={props.isMutable}>
     <h2>{props.header}</h2>
-    <h3>{filteredData.length} from {(props.data).length} contains '<span style={Style.counter}>{filterValue}</span>'</h3>
+    <h3>{filteredData.length} from {(props.data).length} contains '<span style={style.counter}>{filterValue}</span>'</h3>
     <input type='text' value = {filterValue}
     onChange={filterData}
     ></input>
     <button onClick={resetFilter}>Reset Filter</button>
       {filteredData.map(item => {
-        return <ListItem data = {item} key = {item.key} type ={props.header}/>
+        return <ListItem data = {item} key = {item.key} isMutable={props.isMutable} type={props.header}/>
       })}
     </StyledUl>
   ); 

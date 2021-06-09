@@ -1,7 +1,7 @@
 import React from 'react';
 import List from './List';
 import ToolTip from './ToolTip';
-import Style from './style';
+import style from './style';
 
 function App (){
     const methods = Object.getOwnPropertyNames(Array.prototype);
@@ -20,8 +20,8 @@ function App (){
       })
 
     return (
-        <div style={Style.container}>
-            <List data={mutableData} header = 'Mutable'/>
+        <div style={style.container}>
+            <List data={mutableData} header = 'Mutable' isMutable/>
             <List data={unmutableData} header = 'Unmutable'/>
             <ToolTip />
         </div>

@@ -7,7 +7,7 @@ const StyledLi = styled.li`
     background: khaki;
     border-radius: 3px;
     cursor: pointer;
-    ${props => props.type === 'Mutable' && css`
+    ${props => props.isMutable && css`
     background: green;
     color: white;
   `};
@@ -32,7 +32,7 @@ function MoveToolTip(evt){
 
 function ListItem (props) {
     return(
-        <StyledLi data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} type = {props.type}>{props.data.name}</StyledLi>
+        <StyledLi data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} isMutable={props.isMutable}>{props.data.name}</StyledLi>
     )
 }
 
