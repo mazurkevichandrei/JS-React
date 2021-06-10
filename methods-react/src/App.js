@@ -4,6 +4,7 @@ import List from './List';
 import ToolTip from './ToolTip';
 import style from './style';
 import LIST_TYPES from './const/indexConst';
+import HEADER from './const/headerConst';
 
 function App (){
 
@@ -32,7 +33,7 @@ function App (){
 
     return (
       <div>
-        <Header data='HEADER'/>
+        <Header data={HEADER.HEADER_NAME} />
         <div style={style.container}>
             <List data={mutableData} header = {LIST_TYPES.MUTATING} isMutable/>
             <List data={allMethods} header={LIST_TYPES.MAIN} isMain/>

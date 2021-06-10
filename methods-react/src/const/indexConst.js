@@ -3,4 +3,5 @@ const LIST_TYPES = {
     MUTATING: 'Mutable',
     NON_MUTATING: 'Unmutable'
 };
-export default LIST_TYPES
+
+export default LIST_TYPES;
