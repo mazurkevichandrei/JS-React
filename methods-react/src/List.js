@@ -4,6 +4,7 @@ import './App.css';
 import ListItem from './ListItem';
 import style from './style';
 import StyledUl from './styleditems/styledUl'
+import StyledResetButton from './styleditems/StylerReset'
 
 function List(props) {
   const [filteredData, setFilteredData] = useState(props.data)
@@ -27,7 +28,7 @@ function List(props) {
     <input type='text' value = {filterValue}
     onChange={filterData}
     ></input>
-    <button onClick={resetFilter}>Reset Filter</button>
+    <StyledResetButton onClick={resetFilter}>Reset Filter</StyledResetButton>
       {filteredData.map(item => {
         return <ListItem data = {item} key = {item.key} isMutable={props.isMutable} isMain={props.isMain} type={item.type}/>
       })}
