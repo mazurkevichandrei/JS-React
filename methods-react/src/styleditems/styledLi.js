@@ -4,6 +4,7 @@ const StyledLi = styled.li`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    text-align: center;
     padding: 5px;
     margin: 5px 0;
     // max-width: 100%;

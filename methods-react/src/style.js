@@ -20,7 +20,8 @@ const Style = {
       },
     counter: {
         color: 'red'
-    },header:
+    },
+    header:
     {
         display: 'flex',
         justifyContent: 'center',
@@ -28,6 +29,9 @@ const Style = {
         width: '100%',
         margin: '0 auto',
         border: '1px solid black'
+    },
+    itemtext: {
+        width: '100%'
     }
 
 }

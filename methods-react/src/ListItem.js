@@ -1,6 +1,8 @@
 import React from 'react';
 import StyledLi from './styleditems/styledLi';
 import StyledButton from './styleditems/styledButton';
+import style from './style';
+
 
 
 function ShowToolTip(evt){
@@ -25,12 +27,11 @@ const testF = () =>{
 
 function ListItem (props) {
     return(
-        <StyledLi data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} isMutable={props.isMutable} isMain={props.isMain}>
+        <StyledLi data-type = {props.type} isMutable={props.isMutable} isMain={props.isMain}>
             <StyledButton onClick={testF}>M</StyledButton>
-                {props.data.name}
+                <span style={style.itemtext} data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} isMutable={props.isMutable} isMain={props.isMain}>{props.data.name}</span>
             <StyledButton>U</StyledButton>
-        </StyledLi>
-        
+        </StyledLi>   
     )
 }
 
