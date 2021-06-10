@@ -5,6 +5,7 @@ const StyledResetButton = styled.button`
     padding: 5px;
     border-radius: 3px;
     cursor: pointer;
+    font-weight: bold;
 `;
 
 export default StyledResetButton

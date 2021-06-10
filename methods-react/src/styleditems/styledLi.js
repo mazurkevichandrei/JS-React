@@ -12,11 +12,11 @@ const StyledLi = styled.li`
     background: khaki;
     border-radius: 3px;
     cursor: pointer;
-    ${props => props.isMutable && css`
+    ${props => props.ismutable && css`
     background: green;
     color: white;
   `};
-  ${props => props.isMain && css`
+  ${props => props.ismain && css`
     background: orange;
     color: white;
   `};

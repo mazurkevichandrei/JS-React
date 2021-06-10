@@ -11,10 +11,10 @@ const StyledUl = styled.ul`
   border: 2px solid khaki;
   max-width: 400px;
   width: 100%;
-    ${props => props.isMutable && css`
+    ${props => props.ismutable && css`
     border: 2px solid green;
   `};
-    ${props => props.isMain && css`
+    ${props => props.ismain && css`
     border: 2px solid orange;
 `};
 `;

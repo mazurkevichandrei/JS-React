@@ -35,8 +35,8 @@ function App (){
       <div>
         <Header data={HEADER.HEADER_NAME} />
         <div style={style.container}>
-            <List data={mutableData} header = {LIST_TYPES.MUTATING} isMutable/>
-            <List data={allMethods} header={LIST_TYPES.MAIN} isMain/>
+            <List data={mutableData} header = {LIST_TYPES.MUTATING} ismutable='true'/>
+            <List data={allMethods} header={LIST_TYPES.MAIN} ismain='true'/>
             <List data={unmutableData} header = {LIST_TYPES.NON_MUTATING}/>
             <ToolTip />
         </div>

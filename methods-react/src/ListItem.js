@@ -27,9 +27,9 @@ const testF = () =>{
 
 function ListItem (props) {
     return(
-        <StyledLi data-type = {props.type} isMutable={props.isMutable} isMain={props.isMain}>
+        <StyledLi data-type = {props.type} ismutable={props.ismutable} ismain={props.ismain}>
             <StyledButton onClick={testF}>M</StyledButton>
-                <span style={style.itemtext} data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} isMutable={props.isMutable} isMain={props.isMain}>{props.data.name}</span>
+                <span style={style.itemtext} data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} ismutable={props.ismutable} ismain={props.ismain}>{props.data.name}</span>
             <StyledButton>U</StyledButton>
         </StyledLi>   
     )

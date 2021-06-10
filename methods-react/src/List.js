@@ -22,7 +22,7 @@ function List(props) {
   }
 
   return (
-    <StyledUl isMutable={props.isMutable} isMain={props.isMain}>
+    <StyledUl ismutable={props.ismutable} ismain={props.ismain}>
     <h2>{props.header}</h2>
     <h3>{filteredData.length} from {(props.data).length} contains '<span style={style.counter}>{filterValue}</span>'</h3>
     <input type='text' value = {filterValue}
@@ -30,7 +30,7 @@ function List(props) {
     ></input>
     <StyledResetButton onClick={resetFilter}>Reset Filter</StyledResetButton>
       {filteredData.map(item => {
-        return <ListItem data = {item} key = {item.key} isMutable={props.isMutable} isMain={props.isMain} type={item.type}/>
+        return <ListItem data = {item} key = {item.key} ismutable={props.ismutable} ismain={props.ismain} type={item.type}/>
       })}
     </StyledUl>
   ); 
