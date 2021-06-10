@@ -20,7 +20,16 @@ const Style = {
       },
     counter: {
         color: 'red'
+    },header:
+    {
+        display: 'flex',
+        justifyContent: 'center',
+        maxWidth: '800px',
+        width: '100%',
+        margin: '0 auto',
+        border: '1px solid black'
     }
+
 }
 
 export default Style

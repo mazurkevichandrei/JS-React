@@ -1,23 +1,12 @@
 import React from 'react';
-import styled, {css} from "styled-components";
+import StyledLi from './styleditems/styledLi';
+import StyledButton from './styleditems/styledButton';
 
-const StyledLi = styled.li`
-    padding: 5px;
-    margin: 5px 0;
-    background: khaki;
-    border-radius: 3px;
-    cursor: pointer;
-    ${props => props.isMutable && css`
-    background: green;
-    color: white;
-  `};
-`;
 
 function ShowToolTip(evt){
     const tt = document.querySelector('.toolTip')
     tt.textContent = `${evt.target.textContent} is ${evt.target.dataset.type} method`
     tt.style.visibility = 'visible'
-    
 }
 function HideToolTip(){
     const tt = document.querySelector('.toolTip')
@@ -30,9 +19,18 @@ function MoveToolTip(evt){
     tt.style.left = evt.clientX + 15 + 'px'
 }
 
+const testF = () =>{
+    console.log('ok')
+}
+
 function ListItem (props) {
     return(
-        <StyledLi data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} isMutable={props.isMutable}>{props.data.name}</StyledLi>
+        <StyledLi data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} isMutable={props.isMutable} isMain={props.isMain}>
+            <StyledButton onClick={testF}>M</StyledButton>
+                {props.data.name}
+            <StyledButton>U</StyledButton>
+        </StyledLi>
+        
     )
 }
 
