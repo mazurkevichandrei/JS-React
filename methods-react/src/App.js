@@ -25,9 +25,9 @@ function App () {
         <div>
           <Header data={HEADER.HEADER_NAME} />
           <div style={style.container}>
-              <List data={allMethods.filter(item => item.type===LIST_TYPES.MUTATING)} header = {LIST_TYPES.MUTATING} ismutable='true'/>
-              <List data={allMethods} header={LIST_TYPES.MAIN} ismain='true'/>
-              <List data={allMethods.filter(item => item.type===LIST_TYPES.NON_MUTATING)} header = {LIST_TYPES.NON_MUTATING}/>
+              <List header = {LIST_TYPES.MUTATING} ismutable='true'/>
+              <List header={LIST_TYPES.MAIN} ismain='true'/>
+              <List header = {LIST_TYPES.NON_MUTATING}/>
               <ToolTip />
           </div>
         </div>
