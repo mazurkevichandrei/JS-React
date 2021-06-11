@@ -7,7 +7,7 @@ import StyledUl from './styleditems/styledUl'
 import StyledResetButton from './styleditems/StylerReset'
 
 function List(props) {
-  const [filteredData, setFilteredData] = useState(props.data)
+  const [filteredData, setFilteredData] = useState(props.data.filter(item => item.type===props.header))
   const [filterValue, setFilterValue] = useState('')
   
   const filterData = (evt) => {
@@ -18,19 +18,22 @@ function List(props) {
   
   const resetFilter = () => {
     setFilterValue('')
-    setFilteredData(props.data)
+    setFilteredData(props.data.filter(item => item.type===props.header))
   }
+
+
+  // const dataToRender =() => props.data.filter(item => item.type===props.header)
 
   return (
     <StyledUl ismutable={props.ismutable} ismain={props.ismain}>
     <h2>{props.header}</h2>
-    <h3>{filteredData.length} from {(props.data).length} contains '<span style={style.counter}>{filterValue}</span>'</h3>
+    <h3>{filteredData.filter(item => item.type===props.header).length} from {(props.data.filter(item => item.type===props.header)).length} contains '<span style={style.counter}>{filterValue}</span>'</h3>
     <input type='text' value = {filterValue}
     onChange={filterData}
     ></input>
     <StyledResetButton onClick={resetFilter}>Reset Filter</StyledResetButton>
-      {filteredData.map(item => {
-        return <ListItem data = {item} key = {item.key} ismutable={props.ismutable} ismain={props.ismain} type={item.type}/>
+      {filteredData.filter(item => item.type===props.header).map(item => {
+        return <ListItem data = {item} key = {item.name} ismutable={props.ismutable} ismain={props.ismain} type={item.type} methodType={props.header}/>
       })}
     </StyledUl>
   ); 
