@@ -17,9 +17,9 @@ function App () {
         const filteredIndex = allMethods1.findIndex(item => item.name===methodName)
         allMethods1[filteredIndex].type=methodType
         setAllMethods(allMethods1)
-        console.log(allMethods1)   
+        console.log(allMethods)   
     }
-
+    
     return (
       <Context.Provider value={{changeMethodType, allMethods}}>
         <div>

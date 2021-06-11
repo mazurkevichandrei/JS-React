@@ -8,8 +8,8 @@ import StyledUl from './styleditems/styledUl'
 import StyledResetButton from './styleditems/StylerReset'
 
 function List(props) {
-  const {allMethods} = useContext(Context)
-  const [filteredData, setFilteredData] = useState(allMethods.filter(item => item.type===props.header))
+  let {allMethods} = useContext(Context)
+  const [filteredData, setFilteredData] = useState(allMethods)
   const [filterValue, setFilterValue] = useState('')
   
   const filterData = (evt) => {
@@ -22,10 +22,7 @@ function List(props) {
     setFilterValue('')
     setFilteredData(allMethods.filter(item => item.type===props.header))
   }
-
-
-  // const dataToRender =() => props.data.filter(item => item.type===props.header)
-
+  
   return (
     <StyledUl ismutable={props.ismutable} ismain={props.ismain}>
     <h2>{props.header}</h2>
@@ -35,7 +32,7 @@ function List(props) {
     ></input>
     <StyledResetButton onClick={resetFilter}>Reset Filter</StyledResetButton>
       {filteredData.filter(item => item.type===props.header).map(item => {
-        return <ListItem data = {item} key = {item.name} ismutable={props.ismutable} ismain={props.ismain} type={item.type} methodType={props.header}/>
+        return <ListItem data = {item} key = {item.id} ismutable={props.ismutable} ismain={props.ismain} type={item.type} methodType={props.header}/>
       })}
     </StyledUl>
   ); 

@@ -23,8 +23,6 @@ function MoveToolTip(evt){
     tt.style.left = evt.clientX + 15 + 'px'
 }
 
-
-
 function ListItem (props) {
     const {changeMethodType} = useContext(Context)
     return(
