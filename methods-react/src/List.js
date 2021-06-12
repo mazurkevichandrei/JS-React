@@ -21,7 +21,7 @@ function List(props) {
   
   const resetFilter = () => {
     setFilterValue('')
-    setFilteredData(allMethods.filter(item => item.type===props.header))
+    setFilteredData(allMethods)
   }
   
   return (
