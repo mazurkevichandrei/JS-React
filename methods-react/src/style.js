@@ -19,7 +19,7 @@ const Style = {
         border: '1px solid black'
       },
     counter: {
-        color: 'red'
+        color: '#f05181'
     },
     header:
     {
@@ -32,8 +32,16 @@ const Style = {
     },
     itemtext: {
         width: '100%'
-    }
-
+    },
+    h2: {
+        margin: '5px',
+        padding: '0'
+    },
+    h4: {
+        margin: '5px',
+        marginBottom: '10px',
+        padding: '0'
+    },
 }
 
 export default Style

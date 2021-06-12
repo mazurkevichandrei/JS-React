@@ -7,18 +7,17 @@ const StyledLi = styled.li`
     text-align: center;
     padding: 5px;
     margin: 5px 0;
+    color: white;
     // max-width: 100%;
     // width: 100%;
-    background: khaki;
+    background: #ebac4d;
     border-radius: 3px;
     cursor: pointer;
     ${props => props.ismutable && css`
-    background: green;
-    color: white;
+    background: #65ab74;
   `};
   ${props => props.ismain && css`
-    background: orange;
-    color: white;
+    background: #6579ab;
   `};
 `;
 

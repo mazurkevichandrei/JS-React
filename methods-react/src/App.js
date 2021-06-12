@@ -17,7 +17,7 @@ function App () {
         const filteredIndex = allMethods1.findIndex(item => item.name===methodName)
         allMethods1[filteredIndex].type=methodType
         setAllMethods(allMethods1)
-        console.log(allMethods)   
+        // console.log(allMethods)   
     }
     
     return (

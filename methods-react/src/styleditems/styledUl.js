@@ -8,14 +8,14 @@ const StyledUl = styled.ul`
   list-style: none;
   margin: 5px;
   padding: 0 5px;
-  border: 2px solid khaki;
+  border: 2px solid #ebac4d;
   max-width: 400px;
   width: 100%;
     ${props => props.ismutable && css`
-    border: 2px solid green;
+    border: 2px solid #65ab74;
   `};
     ${props => props.ismain && css`
-    border: 2px solid orange;
+    border: 2px solid #6579ab;
 `};
 `;
 

@@ -6,6 +6,7 @@ import ListItem from './ListItem';
 import style from './style';
 import StyledUl from './styleditems/styledUl'
 import StyledResetButton from './styleditems/StylerReset'
+import StyledInput from './styleditems/styledInput'
 
 function List(props) {
   let {allMethods} = useContext(Context)
@@ -25,12 +26,12 @@ function List(props) {
   
   return (
     <StyledUl ismutable={props.ismutable} ismain={props.ismain}>
-    <h2>{props.header}</h2>
-    <h3>{filteredData.filter(item => item.type===props.header).length} from {(allMethods.filter(item => item.type===props.header)).length} contains '<span style={style.counter}>{filterValue}</span>'</h3>
-    <input type='text' value = {filterValue}
+    <h2 style={style.h2}>{props.header}</h2>
+    <h4 style={style.h4}>{filteredData.filter(item => item.type===props.header).length} from {(allMethods.filter(item => item.type===props.header)).length} contains '<span style={style.counter}>{filterValue}</span>'</h4>
+    <StyledInput type='text' value = {filterValue}
     onChange={filterData}
-    ></input>
-    <StyledResetButton onClick={resetFilter}>Reset Filter</StyledResetButton>
+    ></StyledInput>
+    <StyledResetButton onClick={resetFilter}>RESET FILTER</StyledResetButton>
       {filteredData.filter(item => item.type===props.header).map(item => {
         return <ListItem data = {item} key = {item.id} ismutable={props.ismutable} ismain={props.ismain} type={item.type} methodType={props.header}/>
       })}
