@@ -1,19 +1,11 @@
-import React from 'react'
-// import ToolTip from './ToolTip'
-// import PropTypes from 'prop-types'
+import React, {useContext} from 'react';
+import {Context} from './context';
+import StyledLi from './styleditems/styledLi';
+import StyledButton from './styleditems/styledButton';
+import style from './style';
+import LIST_TYPES from './const/indexConst';
 
-const styles = {
-    li: {
-        padding: '5px',
-        margin: '5px 0',
-        background: 'khaki',
-        borderRadius: '3px',
-        cursor: 'pointer'
-    },
-    tooltip: {
-        visibility: 'hidden'
-    }
-}
+
 
 function ShowToolTip(evt){
     const tt = document.querySelector('.toolTip')
@@ -32,9 +24,15 @@ function MoveToolTip(evt){
 }
 
 function ListItem (props) {
+    const {changeMethodType} = useContext(Context)
     return(
-        <li style={styles.li} data-type={props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip}
-        >{props.data.name}</li>
+        <StyledLi data-type = {props.type} ismutable={props.ismutable} ismain={props.ismain}>
+            <StyledButton ismutable={props.ismutable} onClick={() => changeMethodType(LIST_TYPES.MUTATING, props.data.name)}>M</StyledButton>
+                <span style={style.itemtext} data-type = {props.type} onMouseOver={ShowToolTip} onMouseOut={HideToolTip} onMouseMove={MoveToolTip} ismutable={props.ismutable} ismain={props.ismain}>
+                    {props.data.name}
+                    </span>
+            <StyledButton ismutable={props.ismutable} onClick={() => changeMethodType(LIST_TYPES.NON_MUTATING, props.data.name)}>U</StyledButton>
+        </StyledLi>   
     )
 }
 

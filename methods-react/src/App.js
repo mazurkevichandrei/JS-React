@@ -1,42 +1,37 @@
-import React from 'react'
-// import PropTypes from 'prop-types'
-import List from './List'
-import ToolTip from './ToolTip'
+import React from 'react';
+import {useState} from 'react';
+import {Context} from './context';
+import Header from './Header';
+import List from './List';
+import ToolTip from './ToolTip';
+import style from './style';
+import LIST_TYPES from './const/indexConst';
+import HEADER from './const/headerConst';
 
-const styles = {
-    container: {
-      display: 'flex',
-      justifyContent: 'center',
-      maxWidth: '800px',
-      width: '100%',
-      margin: '0 auto',
-      border: '1px solid black'
+function App () {
+
+    const [allMethods, setAllMethods] = useState(Object.getOwnPropertyNames(Array.prototype).map((item,index) =>({id:index+1,name:item,type:LIST_TYPES.MAIN})));
+    
+    const changeMethodType = (methodType, methodName) => {
+        const allMethods1 = [...allMethods]
+        const filteredIndex = allMethods1.findIndex(item => item.name===methodName)
+        allMethods1[filteredIndex].type=methodType
+        setAllMethods(allMethods1)
+        // console.log(allMethods)   
     }
-  }
-
-
-function App (){
-    const methods = Object.getOwnPropertyNames(Array.prototype);
-    const mutable = ['pop', 'push', 'shift', 'unshift', 'splice'];
-    const mutableData = []
-    const unmutableData = []
-    let keyValue = 0
-    methods.map((item,index) => {
-      if (mutable.includes(item)) {
-        mutableData.push({id:index+1,key:keyValue+1,name:item,type:'mutable'})
-        keyValue++
-        } else {
-          unmutableData.push({id:index+1,key:keyValue+1,name:item,type:'unmutable'})
-          keyValue++
-          }
-      })
-
+    
     return (
-        <div style={styles.container}>
-            <List data={mutableData} header = 'Mutable'/>
-            <List data={unmutableData} header = 'Unmutable'/>
-            <ToolTip />
+      <Context.Provider value={{changeMethodType, allMethods}}>
+        <div>
+          <Header data={HEADER.HEADER_NAME} />
+          <div style={style.container}>
+              <List header = {LIST_TYPES.MUTATING} ismutable='true'/>
+              <List header={LIST_TYPES.MAIN} ismain='true'/>
+              <List header = {LIST_TYPES.NON_MUTATING}/>
+              <ToolTip />
+          </div>
         </div>
+      </Context.Provider>
     )
 }
 
