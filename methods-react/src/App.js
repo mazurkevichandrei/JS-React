@@ -23,12 +23,12 @@ function App () {
     return (
       <Context.Provider value={{changeMethodType, allMethods}}>
         <div>
+        <ToolTip />
           <Header data={HEADER.HEADER_NAME} />
           <div style={style.container}>
               <List header = {LIST_TYPES.MUTATING} ismutable='true'/>
               <List header={LIST_TYPES.MAIN} ismain='true'/>
               <List header = {LIST_TYPES.NON_MUTATING}/>
-              <ToolTip />
           </div>
         </div>
       </Context.Provider>
