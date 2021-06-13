@@ -1,4 +1,4 @@
-import React, { createElement } from 'react';
+import React from 'react';
 import style from './style';
 
 function ToolTip() {
@@ -32,7 +32,7 @@ function ToolTip() {
         const isTooltipElement = evt.target.dataset.type
         if(isTooltipElement==='tooltip'){  
             removeTooltip()
-            const data =`${evt.target.textContent} is ${evt.target.getAttribute("methodName")} method`
+            const data =`${evt.target.textContent} is ${evt.target.getAttribute("methodname")} method`
             const {top ,left} = evt.target.getBoundingClientRect()
             addToolTip(data,top,left)
             evt.target.addEventListener('mouseout', hideTooltip);

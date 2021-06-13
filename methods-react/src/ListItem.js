@@ -10,7 +10,7 @@ function ListItem (props) {
     return(
         <StyledLi  ismutable={props.ismutable} ismain={props.ismain}>
             <StyledButton ismutable={props.ismutable} onClick={() => changeMethodType(LIST_TYPES.MUTATING, props.data.name)}>M</StyledButton>
-                <span style={style.itemtext} data-type = 'tooltip' methodName = {props.data.type}
+                <span style={style.itemtext} data-type = 'tooltip' methodname = {props.data.type}
                 ismutable={props.ismutable} ismain={props.ismain}>
                     {props.data.name}
                 </span>
