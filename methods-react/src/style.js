@@ -16,7 +16,8 @@ const Style = {
         maxWidth: '800px',
         width: '100%',
         margin: '0 auto',
-        border: '1px solid black'
+        border: '1px solid black',
+        borderTop: '0',
       },
     counter: {
         color: '#f05181'
@@ -24,6 +25,8 @@ const Style = {
     header:
     {
         display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         justifyContent: 'center',
         maxWidth: '800px',
         width: '100%',
