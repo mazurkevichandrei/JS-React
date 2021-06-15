@@ -2,9 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import {Context} from './context';
 import Header from './Header';
-import List from './List';
 import ToolTip from './ToolTip';
-import style from './style';
 import LIST_TYPES from './const/indexConst';
 import HEADER from './const/headerConst';
 import Methods from './pages/methods';
@@ -14,7 +12,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from 'react-router-dom';
 
 

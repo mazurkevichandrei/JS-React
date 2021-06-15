@@ -6,10 +6,10 @@ const StyledNavi = styled.ul`
   justify-content: center;
   align-items: center;
   list-style: none;
-  margin: 5px;
-  padding: 0 5px;
+  padding: 10px 0;
+  margin: 10px 0;
   border: 2px solid grey;
-  max-width: 780px;
+  // max-width: 780px;
   width: 100%;
 `;
 

@@ -18,6 +18,7 @@ const Style = {
         margin: '0 auto',
         border: '1px solid black',
         borderTop: '0',
+        boxSizing: 'border-box',
       },
     counter: {
         color: '#f05181'
@@ -30,8 +31,10 @@ const Style = {
         justifyContent: 'center',
         maxWidth: '800px',
         width: '100%',
+        padding: '0 7px',
         margin: '0 auto',
-        border: '1px solid black'
+        border: '1px solid black',
+        boxSizing: 'border-box',
     },
     itemtext: {
         width: '100%'

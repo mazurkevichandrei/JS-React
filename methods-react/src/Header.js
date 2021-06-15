@@ -3,7 +3,6 @@ import style from './style';
 import StyledNavi from './styleditems/styledNavi';
 import StyledNaviItem from './styleditems/styledNaviItem';
 import {
-    BrowserRouter as Router,
     Link
   } from 'react-router-dom';
 
