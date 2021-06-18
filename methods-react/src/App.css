@@ -27,6 +27,15 @@
 .App-link {
   color: #61dafb;
 }
+.tooltipEl{
+  visibility: hidden;
+  background-color: palevioletred;
+  color: aliceblue;
+  border: 1px solid purple;
+  border-radius: 3px;
+  padding: 10px;
+  padding-top: 8px;
+}
 
 @keyframes App-logo-spin {
   from {
