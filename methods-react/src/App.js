@@ -8,6 +8,7 @@ import HEADER from './const/headerConst';
 import Methods from './pages/methods';
 import Test from './pages/test';
 import Home from './pages/home';
+import MethodDesc from './pages/methodDesc';
 import {
   BrowserRouter as Router,
   Switch,
@@ -26,9 +27,13 @@ function App () {
         setAllMethods(allMethods1)
         // console.log(allMethods)   
     }
+    const [takenMethod, setTakenMethod] = useState('')
+    const takeMethod = (evt) => {
+      setTakenMethod(evt.target.textContent)
+    }
     
     return (
-      <Context.Provider value={{changeMethodType, allMethods}}>
+      <Context.Provider value={{takeMethod, changeMethodType, allMethods}}>
         <div>
         <ToolTip />
           <Router>
@@ -37,6 +42,7 @@ function App () {
             <Switch>
                 <Route path='/Methods'><Methods /></Route>
                 <Route path='/Test'><Test /></Route>
+                <Route path='/MethodDesc'><MethodDesc method={takenMethod}/></Route>
                 <Route exact path=''><Home /></Route>
             </Switch>
           {/* </div> */}
