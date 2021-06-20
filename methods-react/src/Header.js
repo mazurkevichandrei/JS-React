@@ -20,8 +20,8 @@ const Header = ({data}) => {
                 <StyledNaviItem><SlyledLink to='/test'>Test</SlyledLink></StyledNaviItem>
             </StyledNavi>
         
-        <ThemeButton isDay={true} />
-        <ThemeButton isDay={false}/>
+        <ThemeButton isDay={false} />
+        {/* <ThemeButton isDay={false}/> */}
 
         </div>
     )
