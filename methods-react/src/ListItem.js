@@ -4,6 +4,7 @@ import StyledLi from './styleditems/styledLi';
 import StyledButton from './styleditems/styledButton';
 import style from './style';
 import LIST_TYPES from './const/indexConst';
+import SlyledLink from './styleditems/styledLink'
 
 import {
     Link
@@ -16,7 +17,7 @@ function ListItem (props) {
             <StyledButton ismutable={props.ismutable} onClick={() => changeMethodType(LIST_TYPES.MUTATING, props.data.name)}>M</StyledButton>
                 <span style={style.itemtext} data-type = 'tooltip' methodname = {props.data.type}
                 ismutable={props.ismutable} ismain={props.ismain}>
-                    <Link to='/methoddesc' onClick={takeMethod}>{props.data.name}</Link>
+                    <SlyledLink to='/methoddesc' onClick={takeMethod}>{props.data.name}</SlyledLink>
                 </span>
             <StyledButton ismutable={props.ismutable} onClick={() => changeMethodType(LIST_TYPES.NON_MUTATING, props.data.name)}>U</StyledButton>
         </StyledLi>   
