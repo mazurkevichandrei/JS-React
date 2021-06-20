@@ -33,6 +33,7 @@ const  List = (props) => {
   
   const resetFilter = () => {
     setFilterValue('')
+    setFilteredDataToShow(allMethods)
     setFilteredData(allMethods)
   }
   

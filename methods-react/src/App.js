@@ -28,7 +28,7 @@ function App () {
   : {background: '#575759',
     color: 'white'}
     const changeTheme = (evt) =>{
-        setIsDayTheme(!isDayTheme)
+        setIsDayTheme(!isDayTheme);
         evt.target.textContent = evt.target.textContent === 'Change theme to DAY' ? 'Change theme to NIGHT' : 'Change theme to DAY'
     }
 
