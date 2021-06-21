@@ -12,6 +12,7 @@ import Home from './pages/home';
 import MethodDesc from './pages/methodDesc';
 import { ThemeProvider } from "styled-components";
 import themesList from './themeStyles';
+import StyledDivMain from './styleditems/styledMainDiv';
 import {
   BrowserRouter as Router,
   Switch,
@@ -47,7 +48,7 @@ function App () {
     return (
       <ThemeProvider theme={theme}>
       <Context.Provider value={{takeMethod, changeMethodType, changeTheme, allMethods}}>
-        <div>
+        <StyledDivMain>
         <ToolTip />
           <Router>
           <Header data={HEADER.HEADER_NAME} />
@@ -60,7 +61,7 @@ function App () {
             </Switch>
           {/* </div> */}
           </Router>
-        </div>
+        </StyledDivMain>
       </Context.Provider>
       </ThemeProvider>
     )

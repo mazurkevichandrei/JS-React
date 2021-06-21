@@ -10,14 +10,14 @@ const StyledLi = styled.li`
     color: white;
     // max-width: 100%;
     // width: 100%;
-    background: #ebac4d;
+    background: ${(props) => props.theme.backgroundLiUnmutable};
     border-radius: 3px;
     cursor: pointer;
     ${props => props.ismutable && css`
-    background: #65ab74;
+    background: ${(props) => props.theme.backgroundLiMutable};
   `};
   ${props => props.ismain && css`
-    background: #6579ab;
+    background: ${(props) => props.theme.backgroundLiSource};
   `};
 `;
 

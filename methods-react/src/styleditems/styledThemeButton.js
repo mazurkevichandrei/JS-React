@@ -1,6 +1,7 @@
   import styled from "styled-components";
 
   const StyledThemeButton = styled.button`
+  cursor: pointer;
   max-width: 200px;
   width: 100%;
   margin-bottom: 8px;
