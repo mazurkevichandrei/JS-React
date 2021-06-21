@@ -1,7 +1,12 @@
-const isDayTheme ='ok'
+const themesList = {
+    dayTheme : {
+        background: '#dcdce0',
+        color: 'black'
+    },
+    nightTheme : {
+        background: '#575759',
+        color: 'white'
+    }
+}
 
-const theme = isDayTheme === 'ok'
-? {color: 'red'}
-: {color: 'green'}
-
-export default theme
+export default themesList

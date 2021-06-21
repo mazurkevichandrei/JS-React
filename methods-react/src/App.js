@@ -5,12 +5,13 @@ import Header from './Header';
 import ToolTip from './ToolTip';
 import LIST_TYPES from './const/indexConst';
 import HEADER from './const/headerConst';
+import THEME_BUTTON_NAME from './const/themeButtonConst';
 import Methods from './pages/methods';
 import Test from './pages/test';
 import Home from './pages/home';
 import MethodDesc from './pages/methodDesc';
 import { ThemeProvider } from "styled-components";
-// import theme from './themeStyles';
+import themesList from './themeStyles';
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,14 +23,13 @@ function App () {
     const [allMethods, setAllMethods] = useState(Object.getOwnPropertyNames(Array.prototype).map((item,index) =>({id:index+1,name:item,type:LIST_TYPES.MAIN})));
     
     const [isDayTheme, setIsDayTheme] = useState('true')
-    const theme = isDayTheme
-  ? {background: '#dcdce0',
-    color: 'black'}
-  : {background: '#575759',
-    color: 'white'}
+    const theme = isDayTheme ? themesList.dayTheme : themesList.nightTheme
+    
     const changeTheme = (evt) =>{
         setIsDayTheme(!isDayTheme);
-        evt.target.textContent = evt.target.textContent === 'Change theme to DAY' ? 'Change theme to NIGHT' : 'Change theme to DAY'
+        evt.target.textContent = evt.target.textContent === THEME_BUTTON_NAME.BUTTON_TO_DAY 
+        ? THEME_BUTTON_NAME.BUTTON_TO_NIGHT 
+        : THEME_BUTTON_NAME.BUTTON_TO_DAY
     }
 
     const changeMethodType = (methodType, methodName) => {
