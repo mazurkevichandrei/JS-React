@@ -1,5 +1,8 @@
+import THEME_BUTTON_NAME from './const/themeButtonConst';
+
 const themesList = {
     dayTheme : {
+        buttonName: THEME_BUTTON_NAME.BUTTON_TO_NIGHT,
         backgroundDivMain: '#fff',
 
         background: '#dcdce0',
@@ -14,6 +17,7 @@ const themesList = {
         borderUlUnmutable: '#ebac4d',
     },
     nightTheme : {
+        buttonName: THEME_BUTTON_NAME.BUTTON_TO_DAY,
         backgroundDivMain: '#c0bfc7',
 
         background: '#575759',

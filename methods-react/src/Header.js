@@ -18,11 +18,8 @@ const Header = ({data}) => {
                 <StyledNaviItem><SlyledLink to='/'>Home</SlyledLink></StyledNaviItem>
                 <StyledNaviItem><SlyledLink to='/methods'>Methods</SlyledLink></StyledNaviItem>
                 <StyledNaviItem><SlyledLink to='/test'>Test</SlyledLink></StyledNaviItem>
-            </StyledNavi>
-        
-        <ThemeButton isDay={false} />
-        {/* <ThemeButton isDay={false}/> */}
-
+            </StyledNavi>       
+        <ThemeButton />
         </div>
     )
 }

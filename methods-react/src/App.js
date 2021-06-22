@@ -5,7 +5,6 @@ import Header from './Header';
 import ToolTip from './ToolTip';
 import LIST_TYPES from './const/indexConst';
 import HEADER from './const/headerConst';
-import THEME_BUTTON_NAME from './const/themeButtonConst';
 import Methods from './pages/methods';
 import Test from './pages/test';
 import Home from './pages/home';
@@ -26,11 +25,8 @@ function App () {
     const [isDayTheme, setIsDayTheme] = useState('true')
     const theme = isDayTheme ? themesList.dayTheme : themesList.nightTheme
     
-    const changeTheme = (evt) =>{
+    const changeTheme = () =>{
         setIsDayTheme(!isDayTheme);
-        evt.target.textContent = evt.target.textContent === THEME_BUTTON_NAME.BUTTON_TO_DAY 
-        ? THEME_BUTTON_NAME.BUTTON_TO_NIGHT 
-        : THEME_BUTTON_NAME.BUTTON_TO_DAY
     }
 
     const changeMethodType = (methodType, methodName) => {
@@ -42,12 +38,12 @@ function App () {
 
     const [takenMethod, setTakenMethod] = useState('')
     const takeMethod = (evt) => {
-      setTakenMethod(evt.target.textContent)
+      setTakenMethod(evt.target.name)
     }
     
     return (
       <ThemeProvider theme={theme}>
-      <Context.Provider value={{takeMethod, changeMethodType, changeTheme, allMethods}}>
+      <Context.Provider value={{takeMethod, changeMethodType, changeTheme, allMethods, theme}}>
         <StyledDivMain>
         <ToolTip />
           <Router>
