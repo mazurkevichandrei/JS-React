@@ -4,6 +4,7 @@ import List from '../List';
 import style from '../style';
 
 const Methods = () => {
+
     return(
         <div style={style.container}>
             <List header = {LIST_TYPES.MUTATING} ismutable='true'/>

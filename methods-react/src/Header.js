@@ -9,11 +9,26 @@ import StyledNaviItem from './styleditems/styledNaviItem';
 import ThemeButton from './ThemeButton'
 import SlyledLink from './styleditems/styledLink'
 
-const Header = ({data}) => {
 
+import { useSelector } from 'react-redux';
+import store from './store/store';
+import {increaseState} from './store/reducers/test'
+import {decreaseState} from './store/reducers/test'
+import {resetCounter} from './store/reducers/test'
+import StyledButton from './styleditems/styledButton'
+
+const Header = ({data}) => {
+    const count = useSelector((state) => state.counter);
+    
     return(
         <div style={style.header}>
             <h1>{data}</h1>
+            <span>
+            <StyledButton onClick={()=>store.dispatch(increaseState())}>PLUS</StyledButton>
+            <StyledButton onClick={()=>store.dispatch(resetCounter())}>RESET</StyledButton>
+            <StyledButton onClick={()=>store.dispatch(decreaseState())}>MINUS</StyledButton>
+            </span>
+            <h3>Count: {count.value}</h3>
             <StyledNavi>
                 <StyledNaviItem><SlyledLink to='/'>Home</SlyledLink></StyledNaviItem>
                 <StyledNaviItem><SlyledLink to='/methods'>Methods</SlyledLink></StyledNaviItem>

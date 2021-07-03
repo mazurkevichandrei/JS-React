@@ -13,7 +13,7 @@ const Style = {
     container: {
         display: 'flex',
         justifyContent: 'center',
-        maxWidth: '800px',
+        maxWidth: '1000px',
         width: '100%',
         margin: '0 auto',
         border: '1px solid black',
@@ -29,7 +29,7 @@ const Style = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        maxWidth: '800px',
+        maxWidth: '1000px',
         width: '100%',
         padding: '0 7px',
         margin: '0 auto',
