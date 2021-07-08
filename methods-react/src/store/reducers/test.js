@@ -3,28 +3,31 @@ import { createSlice } from "@reduxjs/toolkit";
 export const counter = createSlice({
     name: 'counter',
     initialState: {
-        value: 0
+        steps: 0,
+        correct: 0,
+        errors: 0,
     }
-      //Object.getOwnPropertyNames(Array.prototype).map((item,index) =>({id:index+1,name:item,type:LIST_TYPES.MAIN}))
     ,
     reducers: {
-        increaseState: (state) => {
-            state.value++
+        increaseSteps: (state) => {
+            state.steps ++
           },
-        decreaseState: (state) => {
-            if(state.value === 0){
-                
-            }else{
-                state.value--
-            }
+        increaseCorrect: (state) => {
+          state.correct ++
+          },
+        decreaseCorrect: (state) => {
+            state.correct --
+            },
+        increaseErrors: (state) => {
+          state.errors ++
           },
         resetCounter: (state) => {
-            state.value=0
+            Object.keys(state).map(item => state[item]=0)
           },
     }
   });
 
-    export const { increaseState, decreaseState, resetCounter } = counter.actions;
+    export const { increaseSteps, increaseCorrect, decreaseCorrect, increaseErrors, resetCounter } = counter.actions;
     export default counter.reducer;
 
 

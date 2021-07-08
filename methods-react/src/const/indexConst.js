@@ -1,7 +1,7 @@
 const LIST_TYPES = {
     MAIN: 'Source',
-    MUTATING: 'Mutable',
-    NON_MUTATING: 'Unmutable'
+    MUTATING: 'Mutating',
+    NON_MUTATING: 'Non-Mutating'
 };
 
 export default LIST_TYPES;

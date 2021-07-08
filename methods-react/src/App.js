@@ -36,7 +36,7 @@ function App () {
     
     return (
       <ThemeProvider theme={theme}>
-      <Context.Provider value={{takeMethod, changeTheme, theme}}>
+      <Context.Provider value={{takeMethod, changeTheme, isDayTheme}}>
         <Provider store={store}>
         <StyledDivMain>
         <ToolTip />
