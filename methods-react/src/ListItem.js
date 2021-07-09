@@ -11,7 +11,6 @@ import store from './store/store';
 import {changeType} from './store/methods';
 import {increaseSteps, increaseCorrect, decreaseCorrect, increaseErrors} from './store/reducers/test'
 
-//import methodstest from './const/methodsListMain'
 import methodsList from './const/methodsListMain';
 
 function ListItem (props) {
@@ -30,7 +29,6 @@ function ListItem (props) {
                     store.dispatch(changeType({name: props.data.name, type: LIST_TYPES.MAIN}))
                     store.dispatch(increaseSteps())
                     isCorrect ? store.dispatch(decreaseCorrect()) : console.log()
-                    // console.log(header )
                 }
                 }>X</StyledButtonBackToSource>
         )
@@ -42,9 +40,7 @@ function ListItem (props) {
         const isCorrect = methodList.includes(selectedMethod)
         const isEdit = editedList.includes(selectedMethod)
         isCorrect ? store.dispatch(increaseCorrect()) : store.dispatch(increaseErrors())
-        isEdit && header !='Source' ? store.dispatch(decreaseCorrect()) : console.log()
-        //console.log(methodList)
-        //console.log(isCorrectEdit)
+        isEdit && header !=='Source' ? store.dispatch(decreaseCorrect()) : console.log()
     }
 
     return(

@@ -1,28 +1,38 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
+import reset from '../image/Clean.png';
+import found from '../image/Search.png';
 
 const StyledResetButton = styled.button`
-    margin: 5px 0;
-    margin-top: 0;
-    padding: 5px;
-    border-radius: 0 0 3px 3px;
+    width: 40px;
+    height: 35px;
+    outline: none;
+    border: none;
     cursor: pointer;
     font-weight: bold;
-    transition: all linear .3s;
-    background-color: #edebeb;
-    border: 2px solid #c9c5c7;
-    color: #4a4848;
+    background: transparent;
+    ${props => props.isShow ?
+        `background-image: url(${found});`
+    : 
+        `background-image: url(${reset})`
     };
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all linear .4s;
+    margin-left: 5px;
     &:hover {
-        background-color: #d6d2d2;
-        border: 2px solid #707070;
-        color: #636263
+        ${props => props.isShow ?
+            `transform: scale(1));`
+        : 
+            `transform: scale(1.1)`
+        };
         }
     &:active {
-        background-color: #f2eeed;
-        color: #949192;
-        border: 2px solid #fff;
+        ${props => props.isShow ?
+            `transform: scale(1));`
+        : 
+            `transform: scale(1.3)`
         };
-      }
+    };
 `;
 
 export default StyledResetButton

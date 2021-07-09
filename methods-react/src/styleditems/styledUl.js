@@ -8,14 +8,14 @@ const StyledUl = styled.ul`
   list-style: none;
   margin: 5px;
   padding: 0 5px;
-  border: 2px solid ${(props) => props.theme.borderUlUnmutable};
+  // border: 2px solid ${(props) => props.theme.borderUlUnmutable};
   max-width: 400px;
   width: 100%;
     ${props => props.ismutable && css`
-    border: 2px solid ${(props) => props.theme.borderUlMutable};
+    // border: 2px solid ${(props) => props.theme.borderUlMutable};
   `};
     ${props => props.ismain && css`
-    border: 2px solid ${(props) => props.theme.borderUlSource};
+    // border: 2px solid ${(props) => props.theme.borderUlSource};
 `};
 `;
 

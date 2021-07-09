@@ -11,13 +11,11 @@ import SlyledLink from './styleditems/styledLink'
 
 import { useSelector } from 'react-redux';
 import store from './store/store';
-import {counter, resetCounter} from './store/reducers/test'
-import StyledButton from './styleditems/styledButton'
+import { resetCounter} from './store/reducers/test'
 import { resetTypes } from './store/methods';
 
 const Header = ({data}) => {
     const count = useSelector((state) => state.counter);
-    const newList = useSelector((state) => state.methods);
     const total = count.steps===0 ? 0 : Math.round(count.correct/count.steps*100)
 
     const restart = () => {
@@ -39,11 +37,11 @@ const Header = ({data}) => {
             </span>
             <span>
             <span>Steps: {count.steps} | </span>
-            <span>Correct: {count.correct} | </span>
+            <span>Correct: {count.correct} (33) | </span>
             <span>Errors: {count.errors} </span>
             </span>
-            <span>Total: {total} %</span>
-            {restartButton()}
+            <span>Total: {total} % | {restartButton()}</span>
+            
             
             <StyledNavi>
                 <StyledNaviItem><SlyledLink to='/'>Home</SlyledLink></StyledNaviItem>

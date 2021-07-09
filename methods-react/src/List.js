@@ -4,7 +4,8 @@ import './App.css';
 import ListItem from './ListItem';
 import style from './style';
 import StyledUl from './styleditems/styledUl'
-import StyledResetButton from './styleditems/StylerReset'
+import StyledResetButton from './styleditems/StylerReset';
+import StyledInputContainer from './styleditems/StyledInputContainer';
 import Input from './Input'
 //REDUX
 import { useSelector } from 'react-redux';
@@ -24,6 +25,8 @@ const  List = (props) => {
     setFilteredDataToShow(IncludeFilter(newList.value, filter))
 }
   
+    const isShowResetButton = filterValue ? false : true;
+
   const resetFilter = () => {
     setFilterValue('')
     setFilteredDataToShow(CompareFilter(newList.value, props.header))
@@ -44,10 +47,10 @@ const  List = (props) => {
       <h4 style={style.h4}>
         {CompareFilter(filteredDataToShow,props.header).length} from {CompareFilter(newList.value, props.header).length} contains '<span style={style.counter}>{filterValue}</span>'
       </h4>
-
-      <Input action={filterData} value={filterValue}/>
-
-    <StyledResetButton onClick={resetFilter}>RESET FILTER</StyledResetButton>
+      <StyledInputContainer>
+        <Input action={filterData} value={filterValue}/>
+        <StyledResetButton onClick={resetFilter} isShow={isShowResetButton}></StyledResetButton>
+      </StyledInputContainer>
       { listTorender.filter(item => item.type===props.header).map(item => {
         return <ListItem 
         data = {item} 
