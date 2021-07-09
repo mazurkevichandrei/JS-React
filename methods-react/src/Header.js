@@ -7,7 +7,8 @@ import StyledNaviItem from './styleditems/styledNaviItem';
 //     Link
 //   } from 'react-router-dom';
 import ThemeButton from './ThemeButton'
-import SlyledLink from './styleditems/styledLink'
+import SlyledLink from './styleditems/styledLink';
+import StyledNaviContainer from './styleditems/StyledNaviContainer';
 
 import { useSelector } from 'react-redux';
 import store from './store/store';
@@ -31,24 +32,23 @@ const Header = ({data}) => {
 
     return(
         <div style={style.header}>
-            <h1>{data}</h1>
-            <span>
-            {/* <StyledButton onClick={()=>store.dispatch(resetCounter())}>RESET</StyledButton> */}
-            </span>
-            <span>
+            <h1 style={style.h1}>{data}</h1>          
+        <StyledNaviContainer>
+            <StyledNavi>
+                <StyledNaviItem><SlyledLink to='/'>Home</SlyledLink></StyledNaviItem>
+                <StyledNaviItem><SlyledLink to='/methods'>Methods</SlyledLink></StyledNaviItem>
+                <StyledNaviItem><SlyledLink to='/test'>Test</SlyledLink></StyledNaviItem>
+            </StyledNavi> 
+            <ThemeButton />     
+        </StyledNaviContainer>
+
+        <span>
             <span>Steps: {count.steps} | </span>
             <span>Correct: {count.correct} (33) | </span>
             <span>Errors: {count.errors} </span>
             </span>
             <span>Total: {total} % | {restartButton()}</span>
-            
-            
-            <StyledNavi>
-                <StyledNaviItem><SlyledLink to='/'>Home</SlyledLink></StyledNaviItem>
-                <StyledNaviItem><SlyledLink to='/methods'>Methods</SlyledLink></StyledNaviItem>
-                <StyledNaviItem><SlyledLink to='/test'>Test</SlyledLink></StyledNaviItem>
-            </StyledNavi>       
-        <ThemeButton />
+
         </div>
     )
 }

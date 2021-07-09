@@ -27,6 +27,7 @@ function App () {
     
     const changeTheme = () =>{
         setIsDayTheme(!isDayTheme);
+        console.log(isDayTheme)
     }
 
     const [takenMethod, setTakenMethod] = useState('')

@@ -16,7 +16,7 @@ const Style = {
         maxWidth: '1000px',
         width: '100%',
         margin: '0 auto',
-        border: '1px solid black',
+        // border: '1px solid black',
         borderTop: '0',
         boxSizing: 'border-box',
       },
@@ -29,12 +29,15 @@ const Style = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        maxWidth: '1000px',
+        backgroundColor: '#4d4d63',
+        color: '#f5f5f7',
+        // maxWidth: '1000px',
         width: '100%',
-        padding: '0 7px',
+        // padding: '0 7px',
         margin: '0 auto',
-        border: '1px solid black',
+        // border: '1px solid black',
         boxSizing: 'border-box',
+        paddingBottom: '5px',
     },
     itemtext: {
         width: '100%'
@@ -48,6 +51,9 @@ const Style = {
         marginBottom: '10px',
         padding: '0'
     },
+    h1: {
+        margin: '10px',
+    }
 }
 
 export default Style

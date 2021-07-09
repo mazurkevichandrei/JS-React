@@ -30,7 +30,7 @@ const StyledResetButton = styled.button`
         ${props => props.isShow ?
             `transform: scale(1));`
         : 
-            `transform: scale(1.3)`
+            `transform: scale(1.5)`
         };
     };
 `;

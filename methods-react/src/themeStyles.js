@@ -5,7 +5,7 @@ const themesList = {
         buttonName: THEME_BUTTON_NAME.BUTTON_TO_NIGHT,
         backgroundDivMain: '#fff',
 
-        background: '#dcdce0',
+        background: '#b1b1ba',
         color: 'black',
 
         backgroundLiSource: '#6579ab',
@@ -20,7 +20,7 @@ const themesList = {
         buttonName: THEME_BUTTON_NAME.BUTTON_TO_DAY,
         backgroundDivMain: '#c0bfc7',
 
-        background: '#575759',
+        background: '#6f708f',
         color: 'white',
 
         backgroundLiSource: '#545252',

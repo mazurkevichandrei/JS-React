@@ -5,9 +5,9 @@ import theme from './themeStyles';
 
 const ThemeButton = () => {
     const {changeTheme, isDayTheme} = useContext(Context)
-    const buttonName = isDayTheme ? theme.dayTheme.buttonName : theme.nightTheme.buttonName
+    //const buttonName = isDayTheme ? theme.dayTheme.buttonName : theme.nightTheme.buttonName
     return (
-        <StyledThemeButton onClick={changeTheme}>{buttonName}</StyledThemeButton>
+        <StyledThemeButton onClick={changeTheme} isDayTheme={isDayTheme}></StyledThemeButton>
     )
 }
 
