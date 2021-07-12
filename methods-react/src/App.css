@@ -40,6 +40,11 @@
   padding: 10px;
   padding-top: 8px;
 }
+h5{
+  margin: 0;
+  margin-left: 5px;
+  padding: 6px 0;
+}
 
 @keyframes App-logo-spin {
   from {

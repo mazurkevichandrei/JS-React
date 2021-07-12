@@ -10,6 +10,10 @@ const Style = {
         opacity: '.7',
         visibility: 'hidden'
     },
+    section: {
+        display: 'flex',
+        flexDirection: 'column',
+    },
     container: {
         display: 'flex',
         justifyContent: 'center',
@@ -20,6 +24,17 @@ const Style = {
         borderTop: '0',
         boxSizing: 'border-box',
       },
+    counterData: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingBottom: '10px',
+        display: 'flex',
+        margin: '0 auto',
+        backgroundColor: '#4d4d63',
+        width: '100%',
+        color: '#fff',
+    },
     counter: {
         color: '#f05181'
     },
@@ -50,6 +65,9 @@ const Style = {
         margin: '5px',
         marginBottom: '10px',
         padding: '0'
+    },
+    h5: {
+        margin: '0',
     },
     h1: {
         margin: '10px',

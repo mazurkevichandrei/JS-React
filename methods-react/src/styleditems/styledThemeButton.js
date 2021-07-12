@@ -11,7 +11,7 @@
   //color: ${(props) => props.theme.color};
   // background-color: ${(props) => props.theme.background};
   cursor: pointer;
-  width: 37px;
+  width: 35px;
   height: 35px;
   margin-right:15px;
   border-radius: 50%;

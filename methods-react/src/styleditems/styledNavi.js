@@ -9,7 +9,7 @@ const StyledNavi = styled.ul`
   padding: 10px 0;
   // margin: 10px 0;
   // border: 2px solid grey;
-  // max-width: 780px;
+  max-width: 220px;
   width: 100%;
   background-color: ${(props) => props.theme.background};
   margin: 0;

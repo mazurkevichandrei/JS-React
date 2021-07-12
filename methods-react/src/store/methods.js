@@ -15,8 +15,10 @@ export const methods = createSlice({
             const data = mode === MODE.LEARN ? state.value : state.gameValue;
             changeMethodType(data, name, type)
         },
-        resetTypes: (state) => {
-            state.value.map(item=> item.type=LIST_TYPES.MAIN)
+        resetTypes: (state, {payload}) => {
+            const {mode} = payload
+            const data = mode === MODE.LEARN ? state.value : state.gameValue;
+            data.map(item=> item.type=LIST_TYPES.MAIN)
         }
     }
 });

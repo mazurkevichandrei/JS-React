@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const StyledNaviContainer = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-width: 100%;
-background-color: ${(props) => props.theme.background};
-padding: 0 260px;
-margin-bottom: 5px;
-box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
 `
+
 export default StyledNaviContainer;
