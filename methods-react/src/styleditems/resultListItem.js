@@ -15,6 +15,7 @@ const StyledResultListItem = styled.li`
     color: black;
     // max-width: 100%;
     width: 100%;
+    background-color: #fff;
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
