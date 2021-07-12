@@ -5,6 +5,7 @@ import StyledButton from './styleditems/styledButton';
 import StyledButtonBackToSource from './styleditems/styledButtonBackToSource';
 import style from './style';
 import LIST_TYPES from './const/indexConst';
+import MODE from './const/mode';
 import SlyledLink from './styleditems/styledLink'
 
 import store from './store/store';
@@ -15,7 +16,7 @@ import methodsList from './const/methodsListMain';
 
 function ListItem (props) {
 
-    const {takeMethod} = useContext(Context)
+    const {takeMethod, mode} = useContext(Context)
 
     const btn = (toHide, selectedMethod, toType) => {
         const methodList = methodsList[toType]
@@ -26,9 +27,11 @@ function ListItem (props) {
             type={props.type}
             onClick={
                 ()=>{
-                    store.dispatch(changeType({name: props.data.name, type: LIST_TYPES.MAIN}))
-                    store.dispatch(increaseSteps())
-                    isCorrect ? store.dispatch(decreaseCorrect()) : console.log()
+                    store.dispatch(changeType({name: props.data.name, type: LIST_TYPES.MAIN, mode}))
+                    mode === MODE.LEARN ? store.dispatch(increaseSteps()) : console.log()
+                    mode === MODE.LEARN ? (
+                        isCorrect ? store.dispatch(decreaseCorrect()) : console.log()
+                        ) : console.log()
                 }
                 }>X</StyledButtonBackToSource>
         )
@@ -43,14 +46,24 @@ function ListItem (props) {
         isEdit && header !=='Source' ? store.dispatch(decreaseCorrect()) : console.log()
     }
 
+    const learnActions = (name,type, methodType) => {
+        store.dispatch(changeType({name: name, type: type, mode}))
+        store.dispatch(increaseSteps())
+        checkIsCorrectMethod(name,type,methodType)
+    }
+
+    const gameActions = (name,type) => {
+        store.dispatch(changeType({name: name, type: type, mode}))
+    }
+
+    const action = props.mode === MODE.LEARN ? learnActions: gameActions
+
     return(
         <StyledLi  ismutable={props.ismutable} ismain={props.ismain}>
             <StyledButton isShow={props.type===LIST_TYPES.MUTATING}
             onClick={
                 ()=>{
-            store.dispatch(changeType({name: props.data.name, type: LIST_TYPES.MUTATING}))
-            store.dispatch(increaseSteps())
-            checkIsCorrectMethod(props.data.name, LIST_TYPES.MUTATING, props.methodType)
+                    action(props.data.name,LIST_TYPES.MUTATING,props.methodType)
                 }
             }>M</StyledButton>
             {btn(props.type===LIST_TYPES.NON_MUTATING, props.data.name, LIST_TYPES.MUTATING)}
@@ -61,9 +74,7 @@ function ListItem (props) {
             <StyledButton isShow={props.type===LIST_TYPES.NON_MUTATING}
             onClick={ 
                 ()=>{
-            store.dispatch(changeType({name: props.data.name, type: LIST_TYPES.NON_MUTATING}))
-            store.dispatch(increaseSteps())
-            checkIsCorrectMethod(props.data.name, LIST_TYPES.NON_MUTATING, props.methodType)
+                    action(props.data.name,LIST_TYPES.NON_MUTATING,props.methodType)
                 }
             }>N</StyledButton>
         </StyledLi>   

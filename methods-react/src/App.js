@@ -4,8 +4,8 @@ import {Context} from './context';
 import Header from './Header';
 import ToolTip from './ToolTip';
 import HEADER from './const/headerConst';
-import Methods from './pages/methods';
-import Test from './pages/test';
+import Learn from './pages/learn';
+import Game from './pages/game';
 import Home from './pages/home';
 import MethodDesc from './pages/methodDesc';
 import { ThemeProvider } from "styled-components";
@@ -27,25 +27,25 @@ function App () {
     
     const changeTheme = () =>{
         setIsDayTheme(!isDayTheme);
-        console.log(isDayTheme)
     }
 
     const [takenMethod, setTakenMethod] = useState('')
-    const takeMethod = (evt) => {
-      setTakenMethod(evt.target.name)
-    }
+    const takeMethod = (evt) => setTakenMethod(evt.target.name)
+
+    const [mode, setMode] = useState('')
+    const setModeType = (modeType) => setMode(modeType)
     
     return (
       <ThemeProvider theme={theme}>
-      <Context.Provider value={{takeMethod, changeTheme, isDayTheme}}>
+      <Context.Provider value={{takeMethod, changeTheme, isDayTheme, setModeType, mode}}>
         <Provider store={store}>
         <StyledDivMain>
         <ToolTip />
           <Router>
           <Header data={HEADER.HEADER_NAME} />
             <Switch>
-                <Route path='/Methods'><Methods /></Route>
-                <Route path='/Test'><Test /></Route>
+                <Route path='/Learn'><Learn /></Route>
+                <Route path='/Game'><Game /></Route>
                 <Route path='/MethodDesc'><MethodDesc method={takenMethod}/></Route>
                 <Route exact path=''><Home /></Route>
             </Switch>

@@ -11,17 +11,18 @@
   //color: ${(props) => props.theme.color};
   // background-color: ${(props) => props.theme.background};
   cursor: pointer;
-  width: 40px;
-  height: 40px;
+  width: 37px;
+  height: 35px;
+  margin-right:15px;
   border-radius: 50%;
   transition: all linear .4s;
   color: #4d4d63;
   outline: none;
   border: none;
   background-color: #fff;
-  background-image: url(${day});
-  ${props => props.isDayTheme && css`
   background-image: url(${night});
+  ${props => props.isDayTheme && css`
+  background-image: url(${day});
 `};
   background-size: cover;
   background-repeat: no-repeat;

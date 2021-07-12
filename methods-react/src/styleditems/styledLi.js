@@ -6,12 +6,12 @@ const StyledLi = styled.li`
     justify-content: space-between;
     text-align: center;
     padding: 5px;
-    margin: 5px 0;
+    margin: 2px 0;
     color: white;
     // max-width: 100%;
     // width: 100%;
     background: ${(props) => props.theme.backgroundLiUnmutable};
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     ${props => props.ismutable && css`
     background: ${(props) => props.theme.backgroundLiMutable};
