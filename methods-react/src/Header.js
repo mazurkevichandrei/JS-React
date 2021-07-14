@@ -26,8 +26,8 @@ const Header = ({data}) => {
             <StyledNaviContainer>
                 <StyledNavi>
                     <StyledNaviItem><SlyledLink to='/'      onClick={()=>setModeType('ABOUT')}>Home</SlyledLink></StyledNaviItem>
-                    <StyledNaviItem><SlyledLink to='/learn' onClick={()=>setModeType(MODE.LEARN)}>Learn</SlyledLink></StyledNaviItem>
-                    <StyledNaviItem><SlyledLink to='/game'  onClick={()=>setModeType(MODE.GAME)}>Game</SlyledLink></StyledNaviItem>
+                    <StyledNaviItem><SlyledLink to='/learn'>Learn</SlyledLink></StyledNaviItem>
+                    <StyledNaviItem><SlyledLink to='/game'>Game</SlyledLink></StyledNaviItem>
                 </StyledNavi> 
                 <span>MODE: {mode}</span>
                 <StyledButtonContainer>

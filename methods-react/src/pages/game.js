@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import LIST_TYPES from '../const/indexConst';
 import List from '../List';
@@ -8,9 +8,11 @@ import StyledSubmit from '../styleditems/styledSubmit';
 import ResutlList from '../ResultList';
 import store from '../store/store';
 import { resetTypes } from '../store/methods';
+import {Context} from '../context';
 
 const Game = () => {
-
+    const {setModeType, mode} = useContext(Context);
+    setModeType(MODE.GAME)
     // const List = useSelector((state) => state.methods);
     // const data = List.gameValue
     const [m, setM] = useState('')

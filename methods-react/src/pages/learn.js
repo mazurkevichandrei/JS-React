@@ -9,8 +9,11 @@ import store from '../store/store';
 import { resetCounter} from '../store/reducers/test'
 import { resetTypes } from '../store/methods';
 import StyledRestart from '../styleditems/styledRestart';
+import ResutlList from '../ResultList';
 
 const Learn = () => {
+    const {setModeType, mode} = useContext(Context);
+    setModeType(MODE.LEARN)
 
     const count = useSelector((state) => state.counter);
     const total = count.steps===0 ? 0 : Math.round(count.correct/count.steps*100)
@@ -35,9 +38,11 @@ const Learn = () => {
                 {restartButton()}
             </div>
             <div style={style.container}>
+                <ResutlList header = {LIST_TYPES.MUTATING}/>
                 <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.LEARN}/>
                 <List header={LIST_TYPES.MAIN} ismain='true' mode={MODE.LEARN}/>
                 <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.LEARN}/>
+                <ResutlList header = {LIST_TYPES.NON_MUTATING}/>
             </div>
         </div>
     )
