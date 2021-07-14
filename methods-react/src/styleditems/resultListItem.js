@@ -14,7 +14,7 @@ const StyledResultListItem = styled.li`
     margin: 2px 0;
     color: black;
     // max-width: 100%;
-    width: 100%;
+    // width: 100%;
     background-color: #fff;
     background-size: auto;
     background-repeat: no-repeat;
@@ -24,6 +24,12 @@ const StyledResultListItem = styled.li`
     background-image: url(${incorrect});
     ${props => props.isCorrect && css`
     background-image: url(${correct});
+  `};
+  ${props => props.isHidden && css`
+  visibility: hidden;
+  `};
+  ${props => props.isRender && css`
+  display: none;
   `};
 `;
 

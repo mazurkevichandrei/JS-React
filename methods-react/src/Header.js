@@ -4,7 +4,7 @@ import {Context} from './context';
 import style from './style';
 import StyledNavi from './styleditems/styledNavi';
 import StyledNaviItem from './styleditems/styledNaviItem';
-import MODE from './const/mode'
+import MODE from './const/mode';
 // import {
 //     Link
 //   } from 'react-router-dom';
@@ -25,7 +25,7 @@ const Header = ({data}) => {
         <StyledNaviSection>
             <StyledNaviContainer>
                 <StyledNavi>
-                    <StyledNaviItem><SlyledLink to='/'      onClick={()=>setModeType('ABOUT')}>Home</SlyledLink></StyledNaviItem>
+                    <StyledNaviItem><SlyledLink to='/'>Home</SlyledLink></StyledNaviItem>
                     <StyledNaviItem><SlyledLink to='/learn'>Learn</SlyledLink></StyledNaviItem>
                     <StyledNaviItem><SlyledLink to='/game'>Game</SlyledLink></StyledNaviItem>
                 </StyledNavi> 

@@ -9,7 +9,7 @@ const StyledLi = styled.li`
     margin: 2px 0;
     color: white;
     // max-width: 100%;
-    // width: 100%;
+    width: 100%;
     background: ${(props) => props.theme.backgroundLiUnmutable};
     border-radius: 5px;
     cursor: pointer;

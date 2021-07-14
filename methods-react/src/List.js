@@ -1,5 +1,4 @@
 import React, {useContext, useEffect} from 'react';
-import {Context} from './context';
 import { useState } from 'react';
 import './App.css';
 import ListItem from './ListItem';
@@ -13,9 +12,26 @@ import { useSelector } from 'react-redux';
 import IncludeFilter from './const/includeFilter';
 import CompareFilter from './const/compareFilter';
 import MODE from './const/mode';
+import methodsList from './const/methodsListMain';
+import StyledResultListItem from './styleditems/resultListItem'
 
 const  List = (props) => {
-  
+
+    const ss={
+      display: 'flex',
+      justifyContent: 'space-between',
+      width: '100%',
+      flexDirection: 'row'
+    }
+   
+    const checkResult = (method) => {
+      const methodList = methodsList[props.header]
+      const isCorrect1 =  methodList.includes(method) ? true : false;
+      return(
+          <StyledResultListItem  isCorrect={isCorrect1} isHidden={props.checkHidden} isRender={props.ismain}></StyledResultListItem>
+      )
+  }
+
   const newList = useSelector((state) => state.methods);
   
   const data = props.mode === MODE.LEARN ? newList.value : newList.gameValue
@@ -53,8 +69,9 @@ const  List = (props) => {
         <Input action={filterData} value={filterValue}/>
         <StyledResetButton onClick={resetFilter} isShow={isShowResetButton}></StyledResetButton>
       </StyledInputContainer>
+      
       { listTorender.filter(item => item.type===props.header).map(item => {
-        return <ListItem 
+        return (<div style={ss}><ListItem 
         data = {item} 
         key = {item.id} 
         ismutable={props.ismutable} 
@@ -62,6 +79,9 @@ const  List = (props) => {
         type={item.type} 
         methodType={props.header}
         mode={props.mode}/>
+        {checkResult(item.name)}
+        </div>
+        )
       })}
     </StyledUl>
   ); 

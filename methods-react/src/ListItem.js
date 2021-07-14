@@ -7,16 +7,28 @@ import style from './style';
 import LIST_TYPES from './const/indexConst';
 import MODE from './const/mode';
 import SlyledLink from './styleditems/styledLink'
-
+import { useSelector } from 'react-redux';
 import store from './store/store';
 import {changeType} from './store/methods';
 import {increaseSteps, increaseCorrect, decreaseCorrect, increaseErrors} from './store/reducers/test'
 
 import methodsList from './const/methodsListMain';
+import StyledResultListItem from './styleditems/resultListItem';
 
 function ListItem (props) {
 
     const {takeMethod, mode} = useContext(Context)
+
+    // const List = useSelector((state) => state.methods);
+    // const data = mode===MODE.GAME ? List.gameValue : List.value;
+
+    // const checkResult = (method, checkingType) => {
+    //     const methodList = methodsList[props.type]
+    //     const isCorrect =  methodList.includes(method, checkingType) ? true : false;
+    //     return(
+    //         <StyledResultListItem  isCorrect={isCorrect}></StyledResultListItem>
+    //     )
+    // }
 
     const btn = (toHide, selectedMethod, toType) => {
         const methodList = methodsList[toType]
@@ -59,7 +71,9 @@ function ListItem (props) {
     const action = props.mode === MODE.LEARN ? learnActions: gameActions
 
     return(
+        
         <StyledLi  ismutable={props.ismutable} ismain={props.ismain}>
+            {/* {checkResult(props.data.name, props.type)} */}
             <StyledButton isShow={props.type===LIST_TYPES.MUTATING}
             onClick={
                 ()=>{

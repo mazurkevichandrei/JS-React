@@ -9,7 +9,7 @@ import store from '../store/store';
 import { resetCounter} from '../store/reducers/test'
 import { resetTypes } from '../store/methods';
 import StyledRestart from '../styleditems/styledRestart';
-import ResutlList from '../ResultList';
+// import ResutlList from '../ResultList';
 
 const Learn = () => {
     const {setModeType, mode} = useContext(Context);
@@ -38,11 +38,9 @@ const Learn = () => {
                 {restartButton()}
             </div>
             <div style={style.container}>
-                <ResutlList header = {LIST_TYPES.MUTATING}/>
-                <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.LEARN}/>
-                <List header={LIST_TYPES.MAIN} ismain='true' mode={MODE.LEARN}/>
-                <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.LEARN}/>
-                <ResutlList header = {LIST_TYPES.NON_MUTATING}/>
+                <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.LEARN} checkHidden={false}/>
+                <List header={LIST_TYPES.MAIN} ismain='true' mode={MODE.LEARN}  checkHidden='true'/>
+                <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.LEARN} checkHidden={false}/>
             </div>
         </div>
     )
