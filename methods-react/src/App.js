@@ -32,12 +32,12 @@ function App () {
     const [takenMethod, setTakenMethod] = useState('')
     const takeMethod = (evt) => setTakenMethod(evt.target.name)
 
-    const [mode, setMode] = useState('')
-    const setModeType = (modeType) => setMode(modeType)
+    // const [mode, setMode] = useState('')
+    // const setModeType = (modeType) => setMode(modeType)
     
     return (
       <ThemeProvider theme={theme}>
-      <Context.Provider value={{takeMethod, changeTheme, isDayTheme, setModeType, mode}}>
+      <Context.Provider value={{takeMethod, changeTheme, isDayTheme }}>
         <Provider store={store}>
         <StyledDivMain>
         <ToolTip />

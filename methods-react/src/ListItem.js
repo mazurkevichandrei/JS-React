@@ -17,18 +17,7 @@ import StyledResultListItem from './styleditems/resultListItem';
 
 function ListItem (props) {
 
-    const {takeMethod, mode} = useContext(Context)
-
-    // const List = useSelector((state) => state.methods);
-    // const data = mode===MODE.GAME ? List.gameValue : List.value;
-
-    // const checkResult = (method, checkingType) => {
-    //     const methodList = methodsList[props.type]
-    //     const isCorrect =  methodList.includes(method, checkingType) ? true : false;
-    //     return(
-    //         <StyledResultListItem  isCorrect={isCorrect}></StyledResultListItem>
-    //     )
-    // }
+    const {takeMethod} = useContext(Context)
 
     const btn = (toHide, selectedMethod, toType) => {
         const methodList = methodsList[toType]
@@ -36,12 +25,12 @@ function ListItem (props) {
 
         return(
             <StyledButtonBackToSource  isShow={toHide}
-            type={props.type}
+            type={props.type} disabled={props.isDisabledMove}
             onClick={
                 ()=>{
-                    store.dispatch(changeType({name: props.data.name, type: LIST_TYPES.MAIN, mode}))
-                    mode === MODE.LEARN ? store.dispatch(increaseSteps()) : console.log()
-                    mode === MODE.LEARN ? (
+                    store.dispatch(changeType({name: props.data.name, type: LIST_TYPES.MAIN, mode: props.mode}))
+                    props.mode === MODE.LEARN ? store.dispatch(increaseSteps()) : console.log()
+                    props.mode === MODE.LEARN ? (
                         isCorrect ? store.dispatch(decreaseCorrect()) : console.log()
                         ) : console.log()
                 }
@@ -59,13 +48,13 @@ function ListItem (props) {
     }
 
     const learnActions = (name,type, methodType) => {
-        store.dispatch(changeType({name: name, type: type, mode}))
+        store.dispatch(changeType({name: name, type: type, mode: props.mode}))
         store.dispatch(increaseSteps())
         checkIsCorrectMethod(name,type,methodType)
     }
 
     const gameActions = (name,type) => {
-        store.dispatch(changeType({name: name, type: type, mode}))
+        store.dispatch(changeType({name: name, type: type, mode: props.mode}))
     }
 
     const action = props.mode === MODE.LEARN ? learnActions: gameActions
@@ -74,7 +63,7 @@ function ListItem (props) {
         
         <StyledLi  ismutable={props.ismutable} ismain={props.ismain}>
             {/* {checkResult(props.data.name, props.type)} */}
-            <StyledButton isShow={props.type===LIST_TYPES.MUTATING}
+            <StyledButton isShow={props.type===LIST_TYPES.MUTATING}  disabled={props.isDisabledMove}
             onClick={
                 ()=>{
                     action(props.data.name,LIST_TYPES.MUTATING,props.methodType)
@@ -85,7 +74,7 @@ function ListItem (props) {
                 <SlyledLink to='/methoddesc' onClick={takeMethod} name={props.data.name}>{props.data.name}</SlyledLink>
                 </span>
             {btn(props.type===LIST_TYPES.MUTATING, props.data.name, LIST_TYPES.NON_MUTATING)}
-            <StyledButton isShow={props.type===LIST_TYPES.NON_MUTATING}
+            <StyledButton isShow={props.type===LIST_TYPES.NON_MUTATING}  disabled={props.isDisabledMove}
             onClick={ 
                 ()=>{
                     action(props.data.name,LIST_TYPES.NON_MUTATING,props.methodType)

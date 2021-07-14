@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import {Context} from './context';
 // import {useState} from 'react';
 import style from './style';
@@ -17,17 +17,18 @@ import styled from 'styled-components';
 
 const Header = ({data}) => {
 
-    const {setModeType, mode} = useContext(Context);
-
+    //const {setModeType, mode} = useContext(Context);
+    const [mode, setMode] = useState('')
+    const setModeType = (modeType) => setMode(modeType)
     return(
         <div style={style.header}>
             <h1 style={style.h1}>{data}</h1>          
         <StyledNaviSection>
             <StyledNaviContainer>
                 <StyledNavi>
-                    <StyledNaviItem><SlyledLink to='/'>Home</SlyledLink></StyledNaviItem>
-                    <StyledNaviItem><SlyledLink to='/learn'>Learn</SlyledLink></StyledNaviItem>
-                    <StyledNaviItem><SlyledLink to='/game'>Game</SlyledLink></StyledNaviItem>
+                    <StyledNaviItem><SlyledLink to='/' >Home</SlyledLink></StyledNaviItem>
+                    <StyledNaviItem><SlyledLink to='/learn' >Learn</SlyledLink></StyledNaviItem>
+                    <StyledNaviItem><SlyledLink to='/game' >Game</SlyledLink></StyledNaviItem>
                 </StyledNavi> 
                 <span>MODE: {mode}</span>
                 <StyledButtonContainer>

@@ -78,7 +78,8 @@ const  List = (props) => {
         ismain={props.ismain} 
         type={item.type} 
         methodType={props.header}
-        mode={props.mode}/>
+        mode={props.mode}
+        isDisabledMove={props.isDisabledMove}/>
         {checkResult(item.name)}
         </div>
         )
