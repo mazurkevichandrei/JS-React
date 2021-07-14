@@ -12,9 +12,6 @@ import {Context} from '../context';
 
 const Game = () => {
 
-    // const {setModeType, mode} = useContext(Context);
-    // setModeType(MODE.GAME)
-    // console.log(mode)
     const newList = useSelector((state) => state.methods);
     const data = newList.gameValue
 

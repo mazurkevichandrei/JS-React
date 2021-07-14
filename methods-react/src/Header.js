@@ -17,9 +17,9 @@ import styled from 'styled-components';
 
 const Header = ({data}) => {
 
-    //const {setModeType, mode} = useContext(Context);
     const [mode, setMode] = useState('')
     const setModeType = (modeType) => setMode(modeType)
+    
     return(
         <div style={style.header}>
             <h1 style={style.h1}>{data}</h1>          

@@ -4,8 +4,6 @@ import {useState} from 'react';
 import {Context} from '../context';
 
 const Home = () => {
-    // const {setModeType, mode} = useContext(Context);
-    // setModeType('ABOUT');
 
     const styleText={
         border: '1px solid black',
