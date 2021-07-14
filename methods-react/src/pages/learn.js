@@ -12,8 +12,6 @@ import StyledRestart from '../styleditems/styledRestart';
 // import ResutlList from '../ResultList';
 
 const Learn = () => {
-    // const {setModeType, mode} = useContext(Context);
-    // setModeType(MODE.LEARN)
 
     const count = useSelector((state) => state.counter);
     const total = count.steps===0 ? 0 : Math.round(count.correct/count.steps*100)

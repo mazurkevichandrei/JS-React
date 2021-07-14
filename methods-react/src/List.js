@@ -20,6 +20,7 @@ const  List = (props) => {
     const ss={
       display: 'flex',
       justifyContent: 'space-between',
+      alignItems: 'center',
       width: '100%',
       flexDirection: 'row'
     }

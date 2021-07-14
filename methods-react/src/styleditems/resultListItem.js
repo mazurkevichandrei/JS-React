@@ -4,14 +4,16 @@ import incorrect from '../image/Fail.png';
 
 
 const StyledResultListItem = styled.li`
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
     height: 30px;
-    width: 30px;
+    width: 32px;
     justify-content: space-between;
     text-align: center;
     padding: 5px;
-    margin: 2px 0;
+    margin: 2px 5px;
+    margin-left: 8px;
     color: black;
     // max-width: 100%;
     // width: 100%;
