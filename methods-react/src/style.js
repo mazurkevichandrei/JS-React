@@ -35,6 +35,7 @@ const Style = {
         backgroundColor: '#4d4d63',
         width: '100%',
         color: '#fff',
+        boxSizing: 'border-box',
     },
     counter: {
         color: '#f05181'

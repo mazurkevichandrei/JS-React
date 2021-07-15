@@ -33,7 +33,7 @@ const Header = ({data}) => {
                     <StyledNaviItem><SlyledLink to='/result' >Result</SlyledLink></StyledNaviItem>
                 </StyledNavi> 
                 <UserNameArea />
-                <span>MODE: {mode}</span>
+                {/* <span>MODE: {mode}</span> */}
                 <StyledButtonContainer>
                     <ThemeButton />
                 </StyledButtonContainer>

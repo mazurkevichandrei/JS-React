@@ -19,7 +19,7 @@ const Learn = () => {
     const total = count.steps===0 ? 0 : Math.round(count.correct/count.steps*100)
 
     const restart = () => {
-        SaveLearnToStorage(name, count.steps, count.correct, count.errors, total)
+        SaveLearnToStorage(MODE.LEARN, name, count.steps, count.correct, count.errors, total)
         store.dispatch(resetCounter())
         store.dispatch(resetTypes({mode: MODE.LEARN}))
     }
@@ -32,11 +32,12 @@ const Learn = () => {
     return(
         <div style={style.section}>
             <div style={style.counterData}>
+                {restartButton()}
                 <h5>Steps: {count.steps}</h5>
                 <h5>| Correct: {count.correct} (33)</h5>
                 <h5>| Errors: {count.errors}</h5>
                 <h5>| Total: {total} % |</h5>
-                {restartButton()}
+                
             </div>
             <div style={style.container}>
                 <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.LEARN} checkHidden={false} isDisabledMove={false}/>
