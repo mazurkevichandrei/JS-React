@@ -26,8 +26,9 @@ const Style = {
       },
     counterData: {
         display: 'flex',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
+        padding: '0 150px',
         paddingBottom: '10px',
         display: 'flex',
         margin: '0 auto',

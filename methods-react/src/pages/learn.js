@@ -10,19 +10,22 @@ import { resetCounter} from '../store/reducers/test'
 import { resetTypes } from '../store/methods';
 import StyledRestart from '../styleditems/styledRestart';
 // import ResutlList from '../ResultList';
+import SaveLearnToStorage from '../SaveLearnToStorage';
 
 const Learn = () => {
-
+    const userData = useSelector((state) => state.userName);
+    const name = userData.name
     const count = useSelector((state) => state.counter);
     const total = count.steps===0 ? 0 : Math.round(count.correct/count.steps*100)
 
     const restart = () => {
+        SaveLearnToStorage(name, count.steps, count.correct, count.errors, total)
         store.dispatch(resetCounter())
         store.dispatch(resetTypes({mode: MODE.LEARN}))
     }
     const restartButton = () =>{ if (count.steps>0){
         return (
-            <StyledRestart onClick={restart}>Try again</StyledRestart>
+            <StyledRestart onClick={restart}>Save and try again</StyledRestart>
             )
         }
     }

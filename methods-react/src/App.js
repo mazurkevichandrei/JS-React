@@ -7,6 +7,7 @@ import HEADER from './const/headerConst';
 import Learn from './pages/learn';
 import Game from './pages/game';
 import Home from './pages/home';
+import Result from './pages/result';
 import MethodDesc from './pages/methodDesc';
 import { ThemeProvider } from "styled-components";
 import themesList from './themeStyles';
@@ -46,6 +47,7 @@ function App () {
             <Switch>
                 <Route path='/Learn'><Learn /></Route>
                 <Route path='/Game'><Game /></Route>
+                <Route path='/Result'><Result /></Route>
                 <Route path='/MethodDesc'><MethodDesc method={takenMethod}/></Route>
                 <Route exact path=''><Home /></Route>
             </Switch>
