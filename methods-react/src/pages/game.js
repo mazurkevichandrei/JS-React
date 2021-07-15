@@ -8,6 +8,7 @@ import StyledSubmit from '../styleditems/styledSubmit';
 // import ResutlList from '../ResultList';
 import store from '../store/store';
 import { resetTypes } from '../store/methods';
+import { turnCheckHidden, turnChangeMethodBtn, turnsubmitBtn, turnFlag } from '../store/reducers/buttonsProps';
 import {Context} from '../context';
 
 const Game = () => {
@@ -15,27 +16,31 @@ const Game = () => {
     const newList = useSelector((state) => state.methods);
     const data = newList.gameValue
 
-    const [checkHidden, setCheckHidden] = useState('true')
-    const [isDisabledMove, setIsDisabledMove] = useState(false)
+    const hiddenState = useSelector((state) => state.buttonsProps);
+    const checkIconIsHidden = hiddenState.checkHidden
+    const isDisabledMove =  hiddenState.changeTypesInactive
+    const isDisabled = hiddenState.submitBtnInactive
+
+    const flag = hiddenState.flag
+    const srcLen = data.filter(item => item.type===LIST_TYPES.MAIN).length
+
+    const lengthSOurce = flag == 0 ? srcLen: flag
+
+    lengthSOurce == 0 ? store.dispatch(turnsubmitBtn({val: false})) :  store.dispatch(turnsubmitBtn({val: true}))
+
     const submitAction = () => {
-        setCheckHidden(false)
-        setIsDisabledMove(true)
-        //setIsDisabled(true)     
+        store.dispatch(turnCheckHidden({val: false}))
+        store.dispatch(turnChangeMethodBtn({val: true}))
+        store.dispatch(turnsubmitBtn({val: true}))
+        store.dispatch(turnFlag({val: 1}))
     }
     const newGame = () => {
         store.dispatch(resetTypes({mode: MODE.GAME}))
-        setCheckHidden(true)
-        setIsDisabledMove(false)
+        store.dispatch(turnCheckHidden({val: true}))
+        store.dispatch(turnChangeMethodBtn({val: false}))
+        store.dispatch(turnsubmitBtn({val: true}))
+        store.dispatch(turnFlag({val: 0}))
     }
-
-    let srcLen = data.filter(item => item.type===LIST_TYPES.MAIN).length
-    const isDisabled = srcLen > 0 ? true : false
-    // const [isDisabled, setIsDisabled] = useState(true)
-    // console.log('r',  isDisabled)
-    // useEffect(()=>{
-    //     setIsDisabled(srcLen > 0 ? true : false)
-    // },[data])
-    
 
     return(
         <div style={style.section}>
@@ -44,9 +49,9 @@ const Game = () => {
                 <StyledSubmit onClick={newGame}>NEW GAME</StyledSubmit>
             </div>
             <div style={style.container}>
-                <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.GAME} checkHidden={checkHidden} isDisabledMove={isDisabledMove}/>
+                <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.GAME} checkHidden={checkIconIsHidden} isDisabledMove={isDisabledMove}/>
                 <List header = {LIST_TYPES.MAIN} ismain='true' mode={MODE.GAME} checkHidden='true'/>
-                <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.GAME} checkHidden={checkHidden} isDisabledMove={isDisabledMove}/>
+                <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.GAME} checkHidden={checkIconIsHidden} isDisabledMove={isDisabledMove}/>
             </div>
         </div>
     )
