@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { useSelector } from 'react-redux';
 // import LIST_TYPES from '../const/indexConst';
 // import List from '../List';
@@ -22,10 +22,20 @@ const Result = () => {
         alignItems: 'flex-start',
         maxWidth: '1000px',
         margin: '0 auto',
+        height: '100%',
+        alignSelf: 'stretch',
+    }
+    const dd = {
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        alignItems: 'stretch'
     }
 
     const clearStorage = () => {
         localStorage.clear()
+        setFilteredDataLearn([])
+        setFilteredDataGame([])
     }
 
     const keys=Object.keys(localStorage)
@@ -34,15 +44,15 @@ const Result = () => {
         )
     const storageToObject = filtered.map(item => ({mode: item[0], user: item[1], steps: item[2], correct: item[3], errors: item[4], total: item[5]}))
 
-    const filteredDataLearn = storageToObject.filter(item => item.mode === MODE.LEARN)
-    const filteredDataGame = storageToObject.filter(item => item.mode === MODE.GAME)
+    const [filteredDataLearn, setFilteredDataLearn] = useState(storageToObject.filter(item => item.mode === MODE.LEARN))
+    const [filteredDataGame, setFilteredDataGame] = useState(storageToObject.filter(item => item.mode === MODE.GAME))
 
     return(
         <div style={style.section}>
             <div style={style.counterData}>
                 <StyledSubmit onClick={clearStorage}>Clear Stat</StyledSubmit>
             </div>
-            
+            <div style={dd}>
             <div style={ss}>
                 <StyledTable>
                 <h5> {MODE.LEARN} Mode STAT: </h5>
@@ -81,6 +91,7 @@ const Result = () => {
                             )
                     })}
                 </StyledTable>         
+            </div>
             </div>
         </div>     
     )

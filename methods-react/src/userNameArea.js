@@ -22,13 +22,12 @@ const UserNameArea = () => {
     const ss = {
         display: 'flex',
         maxWidth: '500px',
-        //width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
-        // backgroundColor: '#fff',
     }
 
     const setUserAction = () =>{
+        nameFromInput === '' ? alert('Please, enter your name!') :
         store.dispatch(setUserName({val: nameFromInput}))
         setNameFromInput('User')
     }

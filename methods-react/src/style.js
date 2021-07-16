@@ -13,6 +13,7 @@ const Style = {
     section: {
         display: 'flex',
         flexDirection: 'column',
+
     },
     container: {
         display: 'flex',
@@ -23,6 +24,7 @@ const Style = {
         // border: '1px solid black',
         borderTop: '0',
         boxSizing: 'border-box',
+        height: '100%',
       },
     counterData: {
         display: 'flex',
