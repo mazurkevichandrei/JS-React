@@ -10,7 +10,7 @@ import { resetCounter} from '../store/reducers/test'
 import { resetTypes } from '../store/methods';
 import StyledRestart from '../styleditems/styledRestart';
 // import ResutlList from '../ResultList';
-import SaveLearnToStorage from '../SaveLearnToStorage';
+import SaveLearnToStorage from '../SaveToStorage';
 
 const Learn = () => {
     const userData = useSelector((state) => state.userName);

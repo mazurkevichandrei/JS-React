@@ -1,25 +1,24 @@
-import React, { useState, useContext, useEffect } from 'react';
-import {Context} from './context';
+import React from 'react';
+// import {Context} from './context';
 // import {useState} from 'react';
 import style from './style';
 import StyledNavi from './styleditems/styledNavi';
 import StyledNaviItem from './styleditems/styledNaviItem';
-import MODE from './const/mode';
-import {
-    Link
-  } from 'react-router-dom';
+// import MODE from './const/mode';
+// import {
+//     Link
+//   } from 'react-router-dom';
 import ThemeButton from './ThemeButton'
 import SlyledLink from './styleditems/styledLink';
 import StyledNaviSection from './styleditems/StyledNaviSection';
 import StyledNaviContainer from './styleditems/StyledNaviContainer';
 import StyledButtonContainer from './styleditems/styledButtonContainer';
-import styled from 'styled-components';
 import UserNameArea from './userNameArea';
 
 const Header = ({data}) => {
 
-    const [mode, setMode] = useState('')
-    const setModeType = (modeType) => setMode(modeType)
+    // const [mode, setMode] = useState('')
+    // const setModeType = (modeType) => setMode(modeType)
     
     return(
         <div style={style.header}>

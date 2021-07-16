@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import SaveToStorage from '../../SaveToStorage';
 
 export const counter = createSlice({
     name: 'counter',
@@ -24,7 +25,6 @@ export const counter = createSlice({
           state.errors ++
           },
         resetCounter: (state) => {
-            //Object.keys(state).map(item => state[item]=0)
             state.steps=0;
             state.correct=0;
             state.errors=0;
@@ -35,6 +35,11 @@ export const counter = createSlice({
         increaseGameErrors: (state) => {
           state.gameErrors ++
         },
+        pubGameResult: (state, {payload}) => {
+          const {mode, name} = payload
+          const total = Math.round(state.gameCorrect/33*100)
+          SaveToStorage(mode, name, 'NA' ,state.gameCorrect, state.gameErrors, total)
+        },
         resetGame: (state) => {
           state.gameCorrect=0;
           state.gameErrors=0;
@@ -43,7 +48,7 @@ export const counter = createSlice({
   });
 
     export const { 
-      increaseSteps, increaseCorrect, decreaseCorrect, increaseErrors, resetCounter, increaseGameCorrect, increaseGameErrors, resetGame } = counter.actions;
+      increaseSteps, increaseCorrect, decreaseCorrect, increaseErrors, resetCounter, increaseGameCorrect, increaseGameErrors, pubGameResult, resetGame } = counter.actions;
     export default counter.reducer;
 
 
