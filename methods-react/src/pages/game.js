@@ -32,7 +32,7 @@ const Game = () => {
     const lengthSOurce = flag == 0 ? srcLen: flag
 
     lengthSOurce == 0 ? store.dispatch(turnsubmitBtn({val: false})) :  store.dispatch(turnsubmitBtn({val: true}))
-  
+    
     const submitAction = () => {
         store.dispatch(turnCheckHidden({val: false}))
         store.dispatch(turnChangeMethodBtn({val: true}))
@@ -48,6 +48,10 @@ const Game = () => {
         store.dispatch(turnsubmitBtn({val: true}))
         store.dispatch(turnFlag({val: 0}))
         store.dispatch(resetGame())
+    }
+
+    const submitActionCheck = () => {
+        name === 'User' ? alert('Please, enter your name!') : submitAction()
     }
 
     const checkResult = () =>{
@@ -66,7 +70,7 @@ const Game = () => {
     return(
         <div style={style.section}>
             <div style={style.counterData}>
-                <StyledSubmit onClick={submitAction} disabled={isDisabled}>SUBMIT</StyledSubmit>
+                <StyledSubmit onClick={submitActionCheck} disabled={isDisabled}>SUBMIT</StyledSubmit>
                 <StyledSubmit onClick={newGame}>NEW GAME</StyledSubmit>
                  <h5>Result | Correct: {results.gameCorrect}</h5><h5>Errors: {results.gameErrors}</h5>
             </div>

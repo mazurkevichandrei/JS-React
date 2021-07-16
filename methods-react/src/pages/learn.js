@@ -23,9 +23,14 @@ const Learn = () => {
         store.dispatch(resetCounter())
         store.dispatch(resetTypes({mode: MODE.LEARN}))
     }
+
+    const restartCheck = () => {
+        name === 'User' ? alert('Please, enter your name!') : restart()
+    }
+
     const restartButton = () =>{ if (count.steps>0){
         return (
-            <StyledRestart onClick={restart}>Save and try again</StyledRestart>
+            <StyledRestart onClick={restartCheck}>Save and try again</StyledRestart>
             )
         }
     }
