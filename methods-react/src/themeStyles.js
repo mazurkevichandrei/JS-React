@@ -23,7 +23,7 @@ const themesList = {
         background: '#6f708f',
         color: 'white',
 
-        backgroundLiSource: '#545252',
+        backgroundLiSource: '#4d4d63',
         backgroundLiMutable: '#7f7f7d',
         backgroundLiUnmutable: '#747882',
 
