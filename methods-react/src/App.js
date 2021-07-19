@@ -34,13 +34,14 @@ function App () {
     const [takenMethod, setTakenMethod] = useState('')
     const takeMethod = (evt) => setTakenMethod(evt.target.name)
 
+    const [message, setMessage] = useState('')
     const [top, setTop] = useState('-200px')
     // const [mode, setMode] = useState('')
     // const setModeType = (modeType) => setMode(modeType)
     
     return (
       <ThemeProvider theme={theme}>
-      <Context.Provider value={{takeMethod, changeTheme, isDayTheme, top, setTop }}>
+      <Context.Provider value={{takeMethod, changeTheme, isDayTheme, top, setTop, message, setMessage }}>
         <Provider store={store}>
         <StyledDivMain>
         <PopUpWindow/>

@@ -11,9 +11,10 @@ import { resetTypes } from '../store/methods';
 import StyledRestart from '../styleditems/styledRestart';
 // import ResutlList from '../ResultList';
 import SaveLearnToStorage from '../SaveToStorage';
+import ERROR from '../const/errorMessage';
 
 const Learn = () => {
-    const {setTop} = useContext(Context)
+    const {setTop, setMessage} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const name = userData.name
     const count = useSelector((state) => state.counter);
@@ -24,9 +25,12 @@ const Learn = () => {
         store.dispatch(resetCounter())
         store.dispatch(resetTypes({mode: MODE.LEARN}))
     }
-   
+    const check = () => {
+        setTop('0') 
+        setMessage(ERROR)
+    }
     const restartCheck = () => {
-        name === 'User' ? setTop('0') : restart()
+        name === 'User' ? check() : restart()
     }
 
     const restartButton = () =>{ if (count.steps>0){

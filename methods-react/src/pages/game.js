@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState, useCallback} from 'react';
 import {Context} from '../context';
 import { useSelector } from 'react-redux';
 import LIST_TYPES from '../const/indexConst';
@@ -10,19 +10,22 @@ import StyledSubmit from '../styleditems/styledSubmit';
 import store from '../store/store';
 import { resetTypes } from '../store/methods';
 import { turnCheckHidden, turnChangeMethodBtn, turnsubmitBtn, turnFlag } from '../store/reducers/buttonsProps';
-import { increaseGameCorrect, increaseGameErrors, resetGame, pubGameResult } from '../store/reducers/test';
+import { increaseGameCorrect, increaseGameErrors, resetGame, pubGameResult, Ss } from '../store/reducers/test';
 import methodsList from '../const/methodsListMain';
+import ERROR from '../const/errorMessage';
 
 const Game = () => {
-    const {setTop} = useContext(Context)
+    const {setTop, setMessage} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const name = userData.name
 
     const results = useSelector((state) => state.counter);
+    const [cor, setCor] = useState(results.gameCorrect)
+    const [err, setErr] = useState(results.gameErrors)
 
     const newList = useSelector((state) => state.methods);
-    const data = newList.gameValue
-
+    const data = newList.gameValue;
+    
     const hiddenState = useSelector((state) => state.buttonsProps);
     const checkIconIsHidden = hiddenState.checkHidden
     const isDisabledMove =  hiddenState.changeTypesInactive
@@ -34,7 +37,10 @@ const Game = () => {
     const lengthSOurce = flag == 0 ? srcLen: flag
 
     lengthSOurce == 0 ? store.dispatch(turnsubmitBtn({val: false})) :  store.dispatch(turnsubmitBtn({val: true}))
+
+
     
+
     const submitAction = () => {
         store.dispatch(turnCheckHidden({val: false}))
         store.dispatch(turnChangeMethodBtn({val: true}))
@@ -42,7 +48,10 @@ const Game = () => {
         store.dispatch(turnFlag({val: 1}))
         checkResult()
         store.dispatch(pubGameResult({mode: MODE.GAME, name: name}))
+        // setMessage(`Yoyr result: ${cor} correct and ${err} incorrect points`)
+        // setTop('0')
     }
+
     const newGame = () => {
         store.dispatch(resetTypes({mode: MODE.GAME}))
         store.dispatch(turnCheckHidden({val: true}))
@@ -52,8 +61,12 @@ const Game = () => {
         store.dispatch(resetGame())
     }
 
+    const check = () => {
+        setTop('0') 
+        setMessage(ERROR)
+    }
     const submitActionCheck = () => {
-        name === 'User' ? setTop('0') : submitAction()
+        name === 'User' ? check() :  submitAction() 
     }
 
     const checkResult = () =>{

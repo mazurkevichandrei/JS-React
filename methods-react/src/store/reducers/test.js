@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import SaveToStorage from '../../SaveToStorage';
 
-export const counter = createSlice({
+export const counter = createSlice(
+  {
     name: 'counter',
     initialState: {
         steps: 0,
