@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import {Context} from '../context';
 import { useSelector } from 'react-redux';
 import LIST_TYPES from '../const/indexConst';
 import List from '../List';
@@ -13,6 +14,7 @@ import { increaseGameCorrect, increaseGameErrors, resetGame, pubGameResult } fro
 import methodsList from '../const/methodsListMain';
 
 const Game = () => {
+    const {setTop} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const name = userData.name
 
@@ -51,7 +53,7 @@ const Game = () => {
     }
 
     const submitActionCheck = () => {
-        name === 'User' ? alert('Please, enter your name!') : submitAction()
+        name === 'User' ? setTop('0') : submitAction()
     }
 
     const checkResult = () =>{

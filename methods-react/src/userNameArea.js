@@ -1,4 +1,5 @@
 import React, {useContext, useState} from 'react';
+import {Context} from './context';
 import { useSelector } from 'react-redux';
 import store from './store/store';
 import {setUserName} from './store/reducers/userName';
@@ -6,7 +7,7 @@ import StyledUserInput from './styleditems/styledUserInput';
 import StyledUserButton from './styleditems/styledUserButton';
 
 const UserNameArea = () => {
-
+    const {setTop} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const user = userData.name
     const [nameFromInput, setNameFromInput ] = useState(user)
@@ -27,7 +28,7 @@ const UserNameArea = () => {
     }
 
     const setUserAction = () =>{
-        nameFromInput === '' ? alert('Please, enter your name!') :
+        nameFromInput === '' || nameFromInput === 'User' ? setTop('0') :
         store.dispatch(setUserName({val: nameFromInput}))
         setNameFromInput('User')
     }

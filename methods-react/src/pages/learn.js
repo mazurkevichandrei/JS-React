@@ -13,6 +13,7 @@ import StyledRestart from '../styleditems/styledRestart';
 import SaveLearnToStorage from '../SaveToStorage';
 
 const Learn = () => {
+    const {setTop} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const name = userData.name
     const count = useSelector((state) => state.counter);
@@ -23,9 +24,9 @@ const Learn = () => {
         store.dispatch(resetCounter())
         store.dispatch(resetTypes({mode: MODE.LEARN}))
     }
-
+   
     const restartCheck = () => {
-        name === 'User' ? alert('Please, enter your name!') : restart()
+        name === 'User' ? setTop('0') : restart()
     }
 
     const restartButton = () =>{ if (count.steps>0){
@@ -41,8 +42,7 @@ const Learn = () => {
                 <h5>Steps: {count.steps}</h5>
                 <h5>| Correct: {count.correct} (33)</h5>
                 <h5>| Errors: {count.errors}</h5>
-                <h5>| Total: {total} % |</h5>
-                
+                <h5>| Total: {total} % </h5> 
             </div>
             <div style={style.container}>
                 <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.LEARN} checkHidden={false} isDisabledMove={false}/>
