@@ -5,6 +5,7 @@ const StyledDivMain = styled.div`
     flex-direction: column;
     //min-height: 100vh;
     background: ${(props) => props.theme.backgroundDivMain};
+    transition: all linear .3s;
 `;
 
 export default StyledDivMain

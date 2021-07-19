@@ -23,6 +23,7 @@ const StyledResultListItem = styled.li`
     background-position: center;
     border-radius: 5px;
     cursor: pointer;
+    background-color: transparent;
     background-image: url(${incorrect});
     ${props => props.isCorrect && css`
     background-image: url(${correct});

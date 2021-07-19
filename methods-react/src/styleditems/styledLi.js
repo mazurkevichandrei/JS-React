@@ -13,6 +13,7 @@ const StyledLi = styled.li`
     background: ${(props) => props.theme.backgroundLiUnmutable};
     border-radius: 5px;
     cursor: pointer;
+    transition: all linear .3s;
     ${props => props.ismutable && css`
     background: ${(props) => props.theme.backgroundLiMutable};
   `};

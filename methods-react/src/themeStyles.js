@@ -24,8 +24,8 @@ const themesList = {
         color: 'white',
 
         backgroundLiSource: '#4d4d63',
-        backgroundLiMutable: '#7f7f7d',
-        backgroundLiUnmutable: '#747882',
+        backgroundLiMutable: '#397aa8',
+        backgroundLiUnmutable: '#64648c',
 
         borderUlSource: '#8f8e91',
         borderUlMutable: '#8f8e91',

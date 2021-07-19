@@ -2,18 +2,19 @@ import React, {useContext} from 'react';
 import { Context } from './context';
 import StyledPopUp from './styleditems/popUp/styledPopUp';
 import StyledRestart from './styleditems/styledRestart';
+import PopUpButton from './styleditems/popUp/popUpButton';
 
 const PopUpWindow = () => {
     const {top,setTop} = useContext(Context)
     
     const hidePopUp = () => {
-        setTop('-150px')
+        setTop('-200px')
     }
 
     return(
         <StyledPopUp top={top}>
             Please, enter your name! 
-            <StyledRestart onClick={hidePopUp}>CLOSE</StyledRestart>
+            <PopUpButton onClick={hidePopUp} top={top}>&#10008;</PopUpButton>
         </StyledPopUp>
     )
 }

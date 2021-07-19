@@ -13,6 +13,7 @@ const StyledNavi = styled.ul`
   width: 100%;
   background-color: ${(props) => props.theme.background};
   margin: 0;
+  transition: all linear .3s;
 `;
 
 export default StyledNavi

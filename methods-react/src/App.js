@@ -34,7 +34,7 @@ function App () {
     const [takenMethod, setTakenMethod] = useState('')
     const takeMethod = (evt) => setTakenMethod(evt.target.name)
 
-    const [top, setTop] = useState('-150px')
+    const [top, setTop] = useState('-200px')
     // const [mode, setMode] = useState('')
     // const setModeType = (modeType) => setMode(modeType)
     
