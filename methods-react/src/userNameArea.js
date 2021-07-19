@@ -9,7 +9,7 @@ import StyledUserButtonReset from './styleditems/styledUserButtonReset';
 import ERROR from './const/errorMessage';
 
 const UserNameArea = () => {
-    const {setTop, setMessage} = useContext(Context)
+    const {setTop, setMessage, setCorrecrtPopUp} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const user = userData.name
     const [nameFromInput, setNameFromInput ] = useState(user)
@@ -24,11 +24,13 @@ const UserNameArea = () => {
 
     const check = () => {
         setMessage(ERROR)
+        setCorrecrtPopUp(false)
         setTop('0') 
     }
     const saveName = () => {
         store.dispatch(setUserName({val: nameFromInput}))
         setMessage(`Name '${nameFromInput}' saved!`)
+        setCorrecrtPopUp(true)
         setTop('0')
         setNameFromInput('User')
     }

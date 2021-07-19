@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 const PopUpButton = styled.button`
     position: absolute;
@@ -14,6 +14,9 @@ const PopUpButton = styled.button`
     border: 0;
     color: #fff;
     background-color: #f75a36;
+    ${props => props.correcrtPopUp && css`
+    background-color: #22bf61;
+  `};
     font-weight: bold;
     border-radius: 50%;
     transition: all linear .3s;

@@ -3,13 +3,6 @@
   import night from '../image/Night.png';
 
   const StyledThemeButton = styled.button`
-  // display: flex;
-  // align-self: flex-end;
-  // max-width: 220px;
-  // width: 100%;
-  // padding: 10px 0;
-  //color: ${(props) => props.theme.color};
-  // background-color: ${(props) => props.theme.background};
   cursor: pointer;
   width: 35px;
   height: 35px;

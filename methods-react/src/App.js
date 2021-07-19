@@ -36,12 +36,13 @@ function App () {
 
     const [message, setMessage] = useState('')
     const [top, setTop] = useState('-200px')
+    const [correcrtPopUp, setCorrecrtPopUp] = useState()
     // const [mode, setMode] = useState('')
     // const setModeType = (modeType) => setMode(modeType)
     
     return (
       <ThemeProvider theme={theme}>
-      <Context.Provider value={{takeMethod, changeTheme, isDayTheme, top, setTop, message, setMessage }}>
+      <Context.Provider value={{takeMethod, changeTheme, isDayTheme, top, setTop, message, setMessage, correcrtPopUp, setCorrecrtPopUp }}>
         <Provider store={store}>
         <StyledDivMain>
         <PopUpWindow/>
