@@ -14,7 +14,7 @@ import SaveLearnToStorage from '../SaveToStorage';
 import ERROR from '../const/errorMessage';
 
 const Learn = () => {
-    const {setTop, setMessage} = useContext(Context)
+    const {setTop, setMessage, setCorrecrtPopUp} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const name = userData.name
     const count = useSelector((state) => state.counter);
@@ -24,8 +24,12 @@ const Learn = () => {
         SaveLearnToStorage(MODE.LEARN, name, count.steps, count.correct, count.errors, total)
         store.dispatch(resetCounter())
         store.dispatch(resetTypes({mode: MODE.LEARN}))
+        setMessage(`Result was saved`)
+        setCorrecrtPopUp(true)
+        setTop('0')
     }
     const check = () => {
+        setCorrecrtPopUp(false)
         setTop('0') 
         setMessage(ERROR)
     }

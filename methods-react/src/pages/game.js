@@ -15,7 +15,7 @@ import methodsList from '../const/methodsListMain';
 import ERROR from '../const/errorMessage';
 
 const Game = () => {
-    const {setTop, setMessage} = useContext(Context)
+    const {setTop, setMessage, setCorrecrtPopUp} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const name = userData.name
 
@@ -48,8 +48,9 @@ const Game = () => {
         store.dispatch(turnFlag({val: 1}))
         checkResult()
         store.dispatch(pubGameResult({mode: MODE.GAME, name: name}))
-        // setMessage(`Yoyr result: ${cor} correct and ${err} incorrect points`)
-        // setTop('0')
+        setMessage(`Result was saved`)
+        setCorrecrtPopUp(true)
+        setTop('0')
     }
 
     const newGame = () => {
@@ -62,6 +63,7 @@ const Game = () => {
     }
 
     const check = () => {
+        setCorrecrtPopUp(false)
         setTop('0') 
         setMessage(ERROR)
     }
