@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import { Context } from './context';
 import StyledPopUp from './styleditems/popUp/styledPopUp';
 import StyledRestart from './styleditems/styledRestart';
