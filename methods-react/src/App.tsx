@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import {useState} from 'react';
 import {Context} from './context';
 import Header from './Header';
@@ -43,9 +43,17 @@ function App () {
     // const [mode, setMode] = useState('')
     // const setModeType = (modeType) => setMode(modeType)
     
+
+    const [positionFixed, setPositionFixed] = useState<boolean>(false)
+    const dd = () =>{
+      window.scrollY > 80 ? setPositionFixed(true) : setPositionFixed(false)
+      console.log(window.scrollY)
+    }
+    window.onscroll=dd
+     
     return (
       <ThemeProvider theme={theme}>
-      <Context.Provider value={{takeMethod, changeTheme, isDayTheme, top, setTop, message, setMessage, correcrtPopUp, setCorrecrtPopUp }}>
+      <Context.Provider value={{takeMethod, changeTheme, isDayTheme, top, setTop, message, setMessage, correcrtPopUp, setCorrecrtPopUp, positionFixed }}>
         <Provider store={store}>
         <StyledDivMain>
         <PopUpWindow/>

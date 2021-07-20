@@ -6,11 +6,12 @@ const ThemeButton = () => {
 
     interface IContext {
         changeTheme: ()=>any
+        isDayTheme: boolean
     }
     
-    const {changeTheme}:IContext = useContext(Context)
+    const {changeTheme, isDayTheme}:IContext = useContext(Context)
     return (
-        <StyledThemeButton onClick={changeTheme}></StyledThemeButton>
+        <StyledThemeButton onClick={changeTheme} isDayTheme={isDayTheme}></StyledThemeButton>
     )
 }
 

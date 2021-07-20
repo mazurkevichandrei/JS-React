@@ -12,6 +12,7 @@ import StyledRestart from '../styleditems/styledRestart';
 // import ResutlList from '../ResultList';
 import SaveLearnToStorage from '../SaveToStorage';
 import ERROR from '../const/errorMessage';
+import StyledCounterSection from '../styleditems/styledCounterSection';
 
 const Learn = () => {
     interface IState {
@@ -29,7 +30,7 @@ const Learn = () => {
     const counterDataStyle : IStyles = style.counterData
     const containerStyle : IStyles = style.container
 
-    const {setTop, setMessage, setCorrecrtPopUp} = useContext(Context)
+    const {setTop, setMessage, setCorrecrtPopUp, positionFixed} = useContext(Context)
     const userData: IUser | any = useSelector<IState>((state) => state.userName);
     const name = userData.name
     const count: IUser | any = useSelector<IState>((state) => state.counter);
@@ -58,15 +59,16 @@ const Learn = () => {
             )
         }
     }
+
     return(
         <div style={sectionStyle}>
-            <div style={counterDataStyle}>
+            <StyledCounterSection isPositionFixed={positionFixed}>
                 {restartButton()}
                 <h5>Steps: {count.steps}</h5>
                 <h5>| Correct: {count.correct} (33)</h5>
                 <h5>| Errors: {count.errors}</h5>
                 <h5>| Total: {total} % </h5> 
-            </div>
+            </StyledCounterSection>
             <div style={containerStyle}>
                 <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.LEARN} checkHidden={false} isDisabledMove={false}/>
                 <List header={LIST_TYPES.MAIN} ismain='true' mode={MODE.LEARN}  checkHidden='true' isDisabledMove={false}/>

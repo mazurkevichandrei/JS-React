@@ -13,7 +13,8 @@ const Style = {
     section: {
         display: 'flex',
         flexDirection: 'column',
-
+        margin: '0',
+        padding: '0',
     },
     container: {
         display: 'flex',
@@ -25,8 +26,11 @@ const Style = {
         borderTop: '0',
         boxSizing: 'border-box',
         height: '100%',
+        padding: '0',
       },
     counterData: {
+        // position: 'fixed',
+        // top: '0',
         display: 'flex',
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -56,7 +60,7 @@ const Style = {
         margin: '0 auto',
         // border: '1px solid black',
         boxSizing: 'border-box',
-        paddingBottom: '5px',
+        //paddingBottom: '5px',
     },
     itemtext: {
         width: '100%'

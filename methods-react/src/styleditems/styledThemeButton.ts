@@ -1,8 +1,11 @@
   import styled, {css} from "styled-components";
   import day from '../image/Day.png';
   import night from '../image/Night.png';
+  type TStyledView  = {
+    isDayTheme: boolean
+}
 
-  const StyledThemeButton = styled.button`
+  const StyledThemeButton = styled.button<TStyledView>`
   cursor: pointer;
   width: 35px;
   height: 35px;

@@ -13,9 +13,10 @@ import { turnCheckHidden, turnChangeMethodBtn, turnsubmitBtn, turnFlag } from '.
 import { increaseGameCorrect, increaseGameErrors, resetGame, pubGameResult, Ss } from '../store/reducers/test';
 import methodsList from '../const/methodsListMain';
 import ERROR from '../const/errorMessage';
+import StyledCounterSection from '../styleditems/styledCounterSection';
 
 const Game = () => {
-    const {setTop, setMessage, setCorrecrtPopUp} = useContext(Context)
+    const {setTop, setMessage, setCorrecrtPopUp, positionFixed} = useContext(Context)
     const userData = useSelector((state) => state.userName);
     const name = userData.name
 
@@ -81,11 +82,11 @@ const Game = () => {
 
     return(
         <div style={style.section}>
-            <div style={style.counterData}>
+            <StyledCounterSection isPositionFixed={positionFixed}>
                 <StyledSubmit onClick={submitActionCheck} disabled={isDisabled}>SUBMIT</StyledSubmit>
                 <StyledSubmit onClick={newGame}>NEW GAME</StyledSubmit>
                  <h5>Result | Correct: {results.gameCorrect}</h5><h5>Errors: {results.gameErrors}</h5>
-            </div>
+            </StyledCounterSection>
             <div style={style.container}>
                 <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.GAME} checkHidden={checkIconIsHidden} isDisabledMove={isDisabledMove}/>
                 <List header = {LIST_TYPES.MAIN} ismain='true' mode={MODE.GAME} checkHidden='true'/>

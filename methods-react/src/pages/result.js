@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import {Context} from '../context';
 // import { useSelector } from 'react-redux';
 // import LIST_TYPES from '../const/indexConst';
 // import List from '../List';
@@ -14,9 +15,10 @@ import StyledTable from '../styleditems/resultPageItems/styledTable';
 import StyledTr from '../styleditems/resultPageItems/styledTr';
 import StyledTh from '../styleditems/resultPageItems/styledTh';
 import StyledTd from '../styleditems/resultPageItems/styledTd';
+import StyledCounterSection from '../styleditems/styledCounterSection';
 
 const Result = () => {
-
+    const {positionFixed} = useContext(Context)
     const ss={
         display: 'flex',
         alignItems: 'flex-start',
@@ -49,9 +51,9 @@ const Result = () => {
 
     return(
         <div style={style.section}>
-            <div style={style.counterData}>
+            <StyledCounterSection isPositionFixed={positionFixed}>
                 <StyledSubmit onClick={clearStorage}>Clear Stat</StyledSubmit>
-            </div>
+            </StyledCounterSection>
             <div style={dd}>
             <div style={ss}>
                 <StyledTable>
