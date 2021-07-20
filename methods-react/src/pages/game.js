@@ -20,8 +20,6 @@ const Game = () => {
     const name = userData.name
 
     const results = useSelector((state) => state.counter);
-    const [cor, setCor] = useState(results.gameCorrect)
-    const [err, setErr] = useState(results.gameErrors)
 
     const newList = useSelector((state) => state.methods);
     const data = newList.gameValue;
@@ -37,9 +35,6 @@ const Game = () => {
     const lengthSource = flag == 0 ? srcLen: flag
 
     lengthSource == 0 ? store.dispatch(turnsubmitBtn({val: false})) :  store.dispatch(turnsubmitBtn({val: true}))
-
-
-    
 
     const submitAction = () => {
         store.dispatch(turnCheckHidden({val: false}))

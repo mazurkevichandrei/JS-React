@@ -14,10 +14,25 @@ import SaveLearnToStorage from '../SaveToStorage';
 import ERROR from '../const/errorMessage';
 
 const Learn = () => {
+    interface IState {
+        userName: string
+        counter: number
+    }
+    interface IUser {
+        name: string
+        count: number
+    }
+    interface IStyles {
+        [key: string]: string
+    }
+    const sectionStyle: IStyles = style.section
+    const counterDataStyle : IStyles = style.counterData
+    const containerStyle : IStyles = style.container
+
     const {setTop, setMessage, setCorrecrtPopUp} = useContext(Context)
-    const userData = useSelector((state) => state.userName);
+    const userData: IUser | any = useSelector<IState>((state) => state.userName);
     const name = userData.name
-    const count = useSelector((state) => state.counter);
+    const count: IUser | any = useSelector<IState>((state) => state.counter);
     const total = count.steps===0 ? 0 : Math.round(count.correct/count.steps*100)
 
     const restart = () => {
@@ -44,15 +59,15 @@ const Learn = () => {
         }
     }
     return(
-        <div style={style.section}>
-            <div style={style.counterData}>
+        <div style={sectionStyle}>
+            <div style={counterDataStyle}>
                 {restartButton()}
                 <h5>Steps: {count.steps}</h5>
                 <h5>| Correct: {count.correct} (33)</h5>
                 <h5>| Errors: {count.errors}</h5>
                 <h5>| Total: {total} % </h5> 
             </div>
-            <div style={style.container}>
+            <div style={containerStyle}>
                 <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.LEARN} checkHidden={false} isDisabledMove={false}/>
                 <List header={LIST_TYPES.MAIN} ismain='true' mode={MODE.LEARN}  checkHidden='true' isDisabledMove={false}/>
                 <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.LEARN} checkHidden={false} isDisabledMove={false}/>
