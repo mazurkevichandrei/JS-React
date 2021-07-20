@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import LIST_TYPES from '../const/indexConst';
 import MODE from '../const/mode';
 import changeMethodType from '../const/changeMethodType';
+//import IMethods from './methodsInterface';
+
 
 export const methods = createSlice({
     name: 'methods',

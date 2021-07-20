@@ -1,12 +1,13 @@
 import React, {useContext, useState} from 'react';
-import {Context} from './context';
+import {Context} from '../context';
 import { useSelector } from 'react-redux';
-import store from './store/store';
-import {setUserName} from './store/reducers/userName';
-import StyledUserInput from './styleditems/styledUserInput';
-import StyledUserButton from './styleditems/styledUserButton';
-import StyledUserButtonReset from './styleditems/styledUserButtonReset';
-import ERROR from './const/errorMessage';
+import store from '../store/store';
+import {setUserName} from '../store/reducers/userName';
+import StyledUserInput from '../styleditems/styledUserInput';
+import StyledUserButton from '../styleditems/styledUserButton';
+import StyledUserButtonReset from '../styleditems/styledUserButtonReset';
+import ERROR from '../const/errorMessage';
+import userAreaStyles from './userAreaStyle';
 
 const UserNameArea = () => {
     const {setTop, setMessage, setCorrecrtPopUp} = useContext(Context)
@@ -34,13 +35,7 @@ const UserNameArea = () => {
         setTop('0')
         setNameFromInput('User')
     }
-    const ss = {
-        display: 'flex',
-        maxWidth: '500px',
-        alignItems: 'center',
-        justifyContent: 'center',
-    }
-
+  
     const setUserAction = () =>{
         nameFromInput === '' || nameFromInput === 'User' ? check() : 
         saveName()
@@ -51,7 +46,7 @@ const UserNameArea = () => {
     }
 
     return (
-        <div style={ss}>
+        <div style={userAreaStyles}>
             <h5>Enter your name: </h5>
             <StyledUserInput type='text' value={nameFromInput} onChange={setName} onFocus={cleanField} placeholder={'User'}></StyledUserInput>
             <StyledUserButton onClick={setUserAction} title='Confirm NAME'></StyledUserButton>

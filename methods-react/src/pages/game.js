@@ -34,9 +34,9 @@ const Game = () => {
     const flag = hiddenState.flag
     const srcLen = data.filter(item => item.type===LIST_TYPES.MAIN).length
 
-    const lengthSOurce = flag == 0 ? srcLen: flag
+    const lengthSource = flag == 0 ? srcLen: flag
 
-    lengthSOurce == 0 ? store.dispatch(turnsubmitBtn({val: false})) :  store.dispatch(turnsubmitBtn({val: true}))
+    lengthSource == 0 ? store.dispatch(turnsubmitBtn({val: false})) :  store.dispatch(turnsubmitBtn({val: true}))
 
 
     

@@ -1,7 +1,8 @@
 import React, {useContext} from 'react';
-import { Context } from './context';
-import StyledPopUp from './styleditems/popUp/styledPopUp';
-import PopUpButton from './styleditems/popUp/popUpButton';
+import { Context } from '../context';
+import StyledPopUp from '../styleditems/popUp/styledPopUp';
+import PopUpButton from '../styleditems/popUp/popUpButton';
+//import hidePopUp from './hidePopUp';
 
 const PopUpWindow = () => {
     const {top,setTop, message, correcrtPopUp} = useContext(Context)

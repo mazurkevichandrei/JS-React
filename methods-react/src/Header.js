@@ -13,7 +13,7 @@ import SlyledLink from './styleditems/styledLink';
 import StyledNaviSection from './styleditems/StyledNaviSection';
 import StyledNaviContainer from './styleditems/StyledNaviContainer';
 import StyledButtonContainer from './styleditems/styledButtonContainer';
-import UserNameArea from './userNameArea';
+import UserNameArea from './UserNameArea/userNameArea';
 
 const Header = ({data}) => {
 

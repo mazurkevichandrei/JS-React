@@ -20,7 +20,7 @@ import {
 //REDUX
 import { Provider } from 'react-redux';
 import store from './store/store';
-import PopUpWindow from './popUpWindow';
+import PopUpWindow from './PopUpWindow/popUpWindow';
 
 function App () {
 
