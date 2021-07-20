@@ -24,19 +24,22 @@ import PopUpWindow from './PopUpWindow/popUpWindow';
 
 function App () {
 
-    const [isDayTheme, setIsDayTheme] = useState('true')
-    const theme = isDayTheme ? themesList.dayTheme : themesList.nightTheme
+  interface ITheme {
+    [key: string]:string
+  }
+    const [isDayTheme, setIsDayTheme] = useState<boolean>(true)
+    const theme:ITheme = isDayTheme ? themesList.dayTheme : themesList.nightTheme
     
-    const changeTheme = () =>{
+    const changeTheme = ():any =>{
         setIsDayTheme(!isDayTheme);
     }
 
-    const [takenMethod, setTakenMethod] = useState('')
-    const takeMethod = (evt) => setTakenMethod(evt.target.name)
+    const [takenMethod, setTakenMethod] = useState<string>('')
+    const takeMethod = (evt: any) => setTakenMethod(evt.target.name)
 
-    const [message, setMessage] = useState('')
-    const [top, setTop] = useState('-200px')
-    const [correcrtPopUp, setCorrecrtPopUp] = useState()
+    const [message, setMessage] = useState<string>('')
+    const [top, setTop] = useState<string>('-200px')
+    const [correcrtPopUp, setCorrecrtPopUp] = useState<true | false>()
     // const [mode, setMode] = useState('')
     // const setModeType = (modeType) => setMode(modeType)
     

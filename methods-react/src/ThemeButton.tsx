@@ -1,18 +1,16 @@
 import React, {useContext} from 'react';
 import {Context} from './context';
 import StyledThemeButton from './styleditems/styledThemeButton';
-import theme from './themeStyles';
 
 const ThemeButton = () => {
 
     interface IContext {
         changeTheme: ()=>any
-        isDayTheme: boolean
     }
     
-    const {changeTheme, isDayTheme}: IContext = useContext(Context)
+    const {changeTheme}:IContext = useContext(Context)
     return (
-        <StyledThemeButton onClick={changeTheme} isDayTheme={isDayTheme}></StyledThemeButton>
+        <StyledThemeButton onClick={changeTheme}></StyledThemeButton>
     )
 }
 
