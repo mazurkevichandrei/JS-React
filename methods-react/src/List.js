@@ -13,7 +13,9 @@ import IncludeFilter from './const/includeFilter';
 import CompareFilter from './const/compareFilter';
 import MODE from './const/mode';
 import methodsList from './const/methodsListMain';
-import StyledResultListItem from './styleditems/resultListItem'
+import StyledResultListItem from './styleditems/resultListItem';
+import StyledListName from './styleditems/styledFonts/styledListName';
+import StyledFilterInfo from './styleditems/styledFonts/styledFilterInfo'
 
 const  List = (props) => {
 
@@ -62,10 +64,10 @@ const  List = (props) => {
   
   return (
     <StyledUl ismutable={props.ismutable} ismain={props.ismain}>
-      <h2 style={style.h2}>{props.header}</h2>
-      <h4 style={style.h4}>
+      <StyledListName>{props.header}</StyledListName>
+      <StyledFilterInfo>
         {CompareFilter(filteredDataToShow,props.header).length} from {CompareFilter(data, props.header).length} contains '<span style={style.counter}>{filterValue}</span>'
-      </h4>
+      </StyledFilterInfo>
       <StyledInputContainer>
         <Input action={filterData} value={filterValue}/>
         <StyledResetButton onClick={resetFilter} isShow={isShowResetButton}></StyledResetButton>

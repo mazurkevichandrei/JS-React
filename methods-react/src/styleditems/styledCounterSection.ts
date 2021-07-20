@@ -1,24 +1,22 @@
 import styled, {css} from "styled-components";
-type TStyledView  = {
-    isPositionFixed: boolean
-}
+// type TStyledView  = {
+//     isPositionFixed: boolean
+// }
 
-const StyledCounterSection = styled.div<TStyledView>`
-    ${props => props.isPositionFixed && css`
-    position: fixed;
-    top: 0;
-    `};
+const StyledCounterSection = styled.div`
     display: flex;
     justify-content: flex-start;
-    alignItems: center;
-    padding: 10px 150px;
-    //padding-bottom: 10px;
+    alignItems: flex-end;
+    padding: 10px 0;
+    padding-bottom: 0;
     display: flex;
-    margin: 0 auto;
-    background-color: #4d4d63;
+    //background-color: #4d4d63;
+    max-width: 978px;
     width: 100%;
     color: #fff;
     box-sizing: border-box;
+    margin: 0 auto;
+    border-bottom: 3px solid #748187;
 `;
 
 export default StyledCounterSection;

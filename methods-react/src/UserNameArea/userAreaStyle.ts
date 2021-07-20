@@ -4,7 +4,8 @@ interface Styles {
 
 const userAreaStyles: Styles = {
     display: 'flex',
-    maxWidth: '500px',
+    maxWidth: '350px',
+    width: '100%',
     alignItems: 'center',
     justifyContent: 'center',
     margin: '0',

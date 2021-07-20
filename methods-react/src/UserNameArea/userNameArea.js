@@ -47,7 +47,7 @@ const UserNameArea = () => {
 
     return (
         <div style={userAreaStyles}>
-            <h5>Enter your name: </h5>
+            {/* <h5>Enter your name: </h5> */}
             <StyledUserInput type='text' value={nameFromInput} onChange={setName} onFocus={cleanField} placeholder={'User'}></StyledUserInput>
             <StyledUserButton onClick={setUserAction} title='Confirm NAME'></StyledUserButton>
             <StyledUserButtonReset onClick={resetUserAction} title='Reset NAME'></StyledUserButtonReset>

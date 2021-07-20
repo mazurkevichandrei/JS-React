@@ -52,7 +52,7 @@ const Style = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#4d4d63',
+        //backgroundColor: '#4d4d63',
         color: '#f5f5f7',
         // maxWidth: '1000px',
         width: '100%',

@@ -5,8 +5,7 @@ import {
   import styled from "styled-components";
 
   const SlyledLink = styled(Link)`
-  // color: ${(props) => props.theme.color};
-  color: #fff;
+  color: ${(props) => props.theme.linkColor};
 `;
 
 export default SlyledLink

@@ -15,12 +15,15 @@ const themesList = {
         borderUlSource: '#6579ab',
         borderUlMutable: '#65ab74',
         borderUlUnmutable: '#ebac4d',
+
+        listNameFontColor: '#000',
+        linkColor: '#f5f5f5',
     },
     nightTheme : {
         buttonName: THEME_BUTTON_NAME.BUTTON_TO_DAY,
-        backgroundDivMain: '#c0bfc7',
+        backgroundDivMain: '#303030',
 
-        background: '#6f708f',
+        background: 'rgb(49,49,49)',
         color: 'white',
 
         backgroundLiSource: '#4d4d63',
@@ -30,6 +33,9 @@ const themesList = {
         borderUlSource: '#8f8e91',
         borderUlMutable: '#8f8e91',
         borderUlUnmutable: '#8f8e91',
+
+        listNameFontColor: '#fff',
+        linkColor: '#f5f5f5',
     }
 }
 

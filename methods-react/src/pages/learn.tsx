@@ -13,6 +13,7 @@ import StyledRestart from '../styleditems/styledRestart';
 import SaveLearnToStorage from '../SaveToStorage';
 import ERROR from '../const/errorMessage';
 import StyledCounterSection from '../styleditems/styledCounterSection';
+import StyledSection from '../styleditems/styledSection'
 
 const Learn = () => {
     interface IState {
@@ -62,13 +63,15 @@ const Learn = () => {
 
     return(
         <div style={sectionStyle}>
-            <StyledCounterSection isPositionFixed={positionFixed}>
+            <StyledSection isPositionFixed={positionFixed}>
+            <StyledCounterSection>
                 {restartButton()}
                 <h5>Steps: {count.steps}</h5>
                 <h5>| Correct: {count.correct} (33)</h5>
                 <h5>| Errors: {count.errors}</h5>
                 <h5>| Total: {total} % </h5> 
             </StyledCounterSection>
+            </StyledSection>
             <div style={containerStyle}>
                 <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.LEARN} checkHidden={false} isDisabledMove={false}/>
                 <List header={LIST_TYPES.MAIN} ismain='true' mode={MODE.LEARN}  checkHidden='true' isDisabledMove={false}/>

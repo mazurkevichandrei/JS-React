@@ -11,7 +11,7 @@ const StyledNavi = styled.ul`
   // border: 2px solid grey;
   max-width: 220px;
   width: 100%;
-  background-color: ${(props) => props.theme.background};
+  //background-color: ${(props) => props.theme.background};
   margin: 0;
   transition: all linear .3s;
 `;

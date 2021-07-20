@@ -14,6 +14,8 @@ import StyledNaviSection from './styleditems/StyledNaviSection';
 import StyledNaviContainer from './styleditems/StyledNaviContainer';
 import StyledButtonContainer from './styleditems/styledButtonContainer';
 import UserNameArea from './UserNameArea/userNameArea';
+import StyledTitle from './styleditems/styledFonts/styledTitle';
+import StyledLine from './styleditems/styledFonts/styledLine';
 
 const Header = ({data}) => {
 
@@ -22,13 +24,13 @@ const Header = ({data}) => {
     
     return(
         <div style={style.header}>
-            <h1 style={style.h1}>{data}</h1>          
+            <StyledTitle>{data}</StyledTitle>          
         <StyledNaviSection>
             <StyledNaviContainer>
                 <StyledNavi>
-                    <StyledNaviItem><SlyledLink to='/' >Home</SlyledLink></StyledNaviItem>
-                    <StyledNaviItem><SlyledLink to='/learn' >Learn</SlyledLink></StyledNaviItem>
-                    <StyledNaviItem><SlyledLink to='/game' >Game</SlyledLink></StyledNaviItem>
+                    <StyledNaviItem><SlyledLink to='/' >Home</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
+                    <StyledNaviItem><SlyledLink to='/learn' >Learn</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
+                    <StyledNaviItem><SlyledLink to='/game' >Game</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
                     <StyledNaviItem><SlyledLink to='/result' >Result</SlyledLink></StyledNaviItem>
                 </StyledNavi> 
                 <UserNameArea />
