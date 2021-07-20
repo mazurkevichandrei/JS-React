@@ -4,7 +4,13 @@ import StyledThemeButton from './styleditems/styledThemeButton';
 import theme from './themeStyles';
 
 const ThemeButton = () => {
-    const {changeTheme, isDayTheme} = useContext(Context)
+
+    interface IContext {
+        changeTheme: ()=>any
+        isDayTheme: boolean
+    }
+    
+    const {changeTheme, isDayTheme}: IContext = useContext(Context)
     return (
         <StyledThemeButton onClick={changeTheme} isDayTheme={isDayTheme}></StyledThemeButton>
     )
