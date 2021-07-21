@@ -7,7 +7,7 @@ const StyledUl = styled.ul`
   align-items: stretch;
   list-style: none;
   margin: 5px;
-  padding: 0 5px;
+  padding: 0 6px;
   // border: 2px solid ${(props) => props.theme.borderUlUnmutable};
   max-width: 400px;
   width: 100%;

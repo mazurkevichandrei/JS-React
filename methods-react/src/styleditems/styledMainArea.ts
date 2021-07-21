@@ -14,6 +14,7 @@ const StyledMainArea = styled.div<TStyledView>`
     box-sizing: border-box;
     height: 100%;
     padding: 0;
+    padding-bottom: 50px;
     ${props => props.isPositionFixed && css`
     margin-top: 30px;
     `};
