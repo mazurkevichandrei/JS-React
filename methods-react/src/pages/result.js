@@ -18,6 +18,7 @@ import StyledTd from '../styleditems/resultPageItems/styledTd';
 import StyledSection from '../styleditems/styledSection';
 import StyledCounterSection from '../styleditems/styledCounterSection';
 import StyledCounterSectionItem from '../styleditems/styledCounterSectionItem';
+import StyledMainArea from '../styleditems/styledMainArea';
 
 const Result = () => {
     const {positionFixed} = useContext(Context)
@@ -26,14 +27,6 @@ const Result = () => {
         alignItems: 'flex-start',
         maxWidth: '1000px',
         margin: '0 auto',
-        height: '100%',
-        alignSelf: 'stretch',
-    }
-    const dd = {
-        display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-        alignItems: 'stretch'
     }
 
     const clearStorage = () => {
@@ -63,8 +56,7 @@ const Result = () => {
                     </StyledCounterSectionItem>
                 </StyledCounterSection>
             </StyledSection>
-            <div style={dd}>
-            <div style={ss}>
+            <StyledMainArea>
                 <StyledTable>
                 <h5> {MODE.LEARN} Mode STAT: </h5>
                     <StyledTr>
@@ -102,8 +94,7 @@ const Result = () => {
                             )
                     })}
                 </StyledTable>         
-            </div>
-            </div>
+            </StyledMainArea>
         </div>     
     )
 }

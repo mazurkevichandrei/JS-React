@@ -6,6 +6,7 @@ type TStyledView  = {
 const StyledMainArea = styled.div<TStyledView>`
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     max-width: 1000px;
     width: 100%;
     margin: 0 auto;

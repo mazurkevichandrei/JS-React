@@ -30,8 +30,6 @@ const Learn = () => {
         [key: string]: string
     }
     const sectionStyle: IStyles = style.section
-    const counterDataStyle : IStyles = style.counterData
-    const containerStyle : IStyles = style.container
 
     const {setTop, setMessage, setCorrecrtPopUp, positionFixed} = useContext(Context)
     const userData: IUser | any = useSelector<IState>((state) => state.userName);

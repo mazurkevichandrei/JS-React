@@ -26,7 +26,8 @@ const StyledResultListItem = styled.li`
     background-image: url(${correct});
   `};
   ${props => props.isHidden && css`
-  visibility: hidden;
+  //visibility: hidden;
+  display: none
   `};
   ${props => props.isRender && css`
   display: none;
