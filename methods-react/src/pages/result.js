@@ -15,7 +15,9 @@ import StyledTable from '../styleditems/resultPageItems/styledTable';
 import StyledTr from '../styleditems/resultPageItems/styledTr';
 import StyledTh from '../styleditems/resultPageItems/styledTh';
 import StyledTd from '../styleditems/resultPageItems/styledTd';
+import StyledSection from '../styleditems/styledSection';
 import StyledCounterSection from '../styleditems/styledCounterSection';
+import StyledCounterSectionItem from '../styleditems/styledCounterSectionItem';
 
 const Result = () => {
     const {positionFixed} = useContext(Context)
@@ -51,9 +53,16 @@ const Result = () => {
 
     return(
         <div style={style.section}>
-            <StyledCounterSection isPositionFixed={positionFixed}>
-                <StyledSubmit onClick={clearStorage}>Clear Stat</StyledSubmit>
-            </StyledCounterSection>
+            <StyledSection isPositionFixed={positionFixed}>
+                <StyledCounterSection>
+                    <StyledCounterSectionItem>
+                        <StyledSubmit onClick={clearStorage}>Clear Stat</StyledSubmit>
+                    </StyledCounterSectionItem>
+                    <StyledCounterSectionItem>
+                        <h5>HISTORY</h5>
+                    </StyledCounterSectionItem>
+                </StyledCounterSection>
+            </StyledSection>
             <div style={dd}>
             <div style={ss}>
                 <StyledTable>

@@ -39,7 +39,7 @@ const themesList = {
         listNameFontColor: '#fff',
         linkColor: '#f5f5f5',
 
-        tableBackground: '#fff',
+        tableBackground: '#484a49',
     }
 }
 
