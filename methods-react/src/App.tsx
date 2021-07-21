@@ -57,7 +57,6 @@ function App () {
     const [positionFixed, setPositionFixed] = useState<boolean>(false)
     const dd = () =>{
       window.scrollY > 80 ? setPositionFixed(true) : setPositionFixed(false)
-      console.log(window.scrollY)
     }
     window.onscroll=dd
      

@@ -7,7 +7,10 @@ const StyledResetButton = styled.button`
     height: 35px;
     outline: none;
     border: none;
+    //cursor: pointer;
+    ${props => props.isShow === false && css`
     cursor: pointer;
+  `};
     font-weight: bold;
     background: transparent;
     ${props => props.isShow ?

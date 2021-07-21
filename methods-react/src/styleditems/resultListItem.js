@@ -14,16 +14,13 @@ const StyledResultListItem = styled.li`
     padding: 5px;
     margin: 2px 5px;
     margin-left: 8px;
+    margin-right: 2px;
     color: black;
-    // max-width: 100%;
-    // width: 100%;
-    background-color: #fff;
     background-size: auto;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 5px;
     cursor: pointer;
-    background-color: transparent;
     background-image: url(${incorrect});
     ${props => props.isCorrect && css`
     background-image: url(${correct});
