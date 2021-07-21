@@ -18,6 +18,8 @@ const themesList = {
 
         listNameFontColor: '#000',
         linkColor: '#f5f5f5',
+
+        tableBackground: '#fff',
     },
     nightTheme : {
         buttonName: THEME_BUTTON_NAME.BUTTON_TO_DAY,
@@ -26,9 +28,9 @@ const themesList = {
         background: 'rgb(49,49,49)',
         color: 'white',
 
-        backgroundLiSource: '#4d4d63',
-        backgroundLiMutable: '#397aa8',
-        backgroundLiUnmutable: '#64648c',
+        backgroundLiSource: '#56b6cc',
+        backgroundLiMutable: '#569bcc',
+        backgroundLiUnmutable: '#56ccb0',
 
         borderUlSource: '#8f8e91',
         borderUlMutable: '#8f8e91',
@@ -36,6 +38,8 @@ const themesList = {
 
         listNameFontColor: '#fff',
         linkColor: '#f5f5f5',
+
+        tableBackground: '#fff',
     }
 }
 

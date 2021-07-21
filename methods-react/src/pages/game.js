@@ -14,7 +14,9 @@ import { increaseGameCorrect, increaseGameErrors, resetGame, pubGameResult, Ss }
 import methodsList from '../const/methodsListMain';
 import ERROR from '../const/errorMessage';
 import StyledCounterSection from '../styleditems/styledCounterSection';
-import StyledSection from '../styleditems/styledSection'
+import StyledSection from '../styleditems/styledSection';
+import StyledMainArea from '../styleditems/styledMainArea';
+import StyledCounterSectionItem from '../styleditems/styledCounterSectionItem';
 
 const Game = () => {
     const {setTop, setMessage, setCorrecrtPopUp, positionFixed} = useContext(Context)
@@ -85,16 +87,20 @@ const Game = () => {
         <div style={style.section}>
             <StyledSection isPositionFixed={positionFixed}>
             <StyledCounterSection>
-                <StyledSubmit onClick={submitActionCheck} disabled={isDisabled}>SUBMIT</StyledSubmit>
-                <StyledSubmit onClick={newGame}>NEW GAME</StyledSubmit>
-                 <h5>Result | Correct: {results.gameCorrect}</h5><h5>Errors: {results.gameErrors}</h5>
+                <StyledCounterSectionItem>
+                    <StyledSubmit onClick={submitActionCheck} disabled={isDisabled}>SUBMIT</StyledSubmit>
+                    <StyledSubmit onClick={newGame}>NEW GAME</StyledSubmit>
+                </StyledCounterSectionItem>
+                <StyledCounterSectionItem>
+                    <h5>Result | Correct: {results.gameCorrect}</h5><h5>Errors: {results.gameErrors}</h5>
+                </StyledCounterSectionItem>
             </StyledCounterSection>
             </StyledSection>
-            <div style={style.container}>
+            <StyledMainArea isPositionFixed={positionFixed}>
                 <List header = {LIST_TYPES.MUTATING} ismutable='true' mode={MODE.GAME} checkHidden={checkIconIsHidden} isDisabledMove={isDisabledMove}/>
                 <List header = {LIST_TYPES.MAIN} ismain='true' mode={MODE.GAME} checkHidden='true'/>
                 <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.GAME} checkHidden={checkIconIsHidden} isDisabledMove={isDisabledMove}/>
-            </div>
+            </StyledMainArea>
         </div>
     )
 }

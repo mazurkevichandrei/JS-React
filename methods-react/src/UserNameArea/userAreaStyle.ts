@@ -4,10 +4,10 @@ interface Styles {
 
 const userAreaStyles: Styles = {
     display: 'flex',
-    maxWidth: '350px',
+    maxWidth: '410px',
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     margin: '0',
     padding: '0',
 }

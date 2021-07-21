@@ -76,6 +76,7 @@ const Style = {
     },
     h5: {
         margin: '0',
+        paddingBottom: '6px',
     },
     h1: {
         margin: '10px',

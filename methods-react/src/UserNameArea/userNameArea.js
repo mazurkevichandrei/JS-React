@@ -8,6 +8,7 @@ import StyledUserButton from '../styleditems/styledUserButton';
 import StyledUserButtonReset from '../styleditems/styledUserButtonReset';
 import ERROR from '../const/errorMessage';
 import userAreaStyles from './userAreaStyle';
+import StyledUserInputContainer from '../styleditems/styledUserInputContainer';
 
 const UserNameArea = () => {
     const {setTop, setMessage, setCorrecrtPopUp} = useContext(Context)
@@ -47,11 +48,12 @@ const UserNameArea = () => {
 
     return (
         <div style={userAreaStyles}>
-            {/* <h5>Enter your name: </h5> */}
-            <StyledUserInput type='text' value={nameFromInput} onChange={setName} onFocus={cleanField} placeholder={'User'}></StyledUserInput>
-            <StyledUserButton onClick={setUserAction} title='Confirm NAME'></StyledUserButton>
-            <StyledUserButtonReset onClick={resetUserAction} title='Reset NAME'></StyledUserButtonReset>
-            <h5>Hi, {user}</h5>
+            <StyledUserInputContainer>
+                <StyledUserInput type='text' value={nameFromInput} onChange={setName} onFocus={cleanField} placeholder={'User'}></StyledUserInput>
+                <StyledUserButton onClick={setUserAction} title='Confirm NAME'></StyledUserButton>
+                <StyledUserButtonReset onClick={resetUserAction} title='Reset NAME'></StyledUserButtonReset>
+            </StyledUserInputContainer>
+            <h5>Hi,{user}</h5>
         </div>
     )
 }
