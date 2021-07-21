@@ -19,6 +19,7 @@ import StyledSection from '../styleditems/styledSection';
 import StyledCounterSection from '../styleditems/styledCounterSection';
 import StyledCounterSectionItem from '../styleditems/styledCounterSectionItem';
 import StyledMainArea from '../styleditems/styledMainArea';
+import StyledTableName from '../styleditems/resultPageItems/styledTableName';
 
 const Result = () => {
     const {positionFixed} = useContext(Context)
@@ -58,7 +59,7 @@ const Result = () => {
             </StyledSection>
             <StyledMainArea>
                 <StyledTable>
-                <h5> {MODE.LEARN} Mode STAT: </h5>
+                    <StyledTableName> {MODE.LEARN} Mode STAT: </StyledTableName>
                     <StyledTr>
                         <StyledTh>USER</StyledTh>
                         <StyledTh>STEPS</StyledTh>
@@ -76,7 +77,7 @@ const Result = () => {
 
                 </StyledTable>
                 <StyledTable>
-                    <h5> {MODE.GAME} Mode STAT:</h5>
+                    <StyledTableName> {MODE.GAME} Mode STAT:</StyledTableName>
                     <StyledTr>
                         <StyledTh>USER</StyledTh>
                         <StyledTh>CORRECT</StyledTh>
