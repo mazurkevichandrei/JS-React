@@ -10,7 +10,7 @@ const StyledCounterSection = styled.div`
     padding: 10px 0;
     padding-bottom: 0;
     display: flex;
-    //background-color: #4d4d63;
+    //background: ${(props) => props.theme.backgroundDivMain};
     max-width: 978px;
     width: 100%;
     color: #fff;

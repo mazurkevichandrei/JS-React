@@ -4,10 +4,6 @@ type TStyledView  = {
 }
 
 const StyledSection = styled.div<TStyledView>`
-    ${props => props.isPositionFixed && css`
-    position: fixed;
-    top: 0;
-    `};
     display: flex;
     display: flex;
     background: ${(props) => props.theme.backgroundDivMain};
@@ -16,6 +12,14 @@ const StyledSection = styled.div<TStyledView>`
     box-sizing: border-box;
     margin: 0 auto;
     transition: all linear .3s;
+    opacity: 0.95;
+    z-index: 0;
+    ${props => props.isPositionFixed && css`
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    opacity: .98;
+    `};
 `;
 
 export default StyledSection;

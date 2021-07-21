@@ -16,5 +16,6 @@ transition: all linear .3s;
 box-shadow: 0px 0px 15px 14px rgba(0, 0, 0, 0.2);
 // background: rgb(49,49,49);
 background: linear-gradient(180deg, rgba(49,49,49,1) 0%, rgba(13,13,13,1) 100%);
+z-index: 1;
 `
 export default StyledNaviSection;

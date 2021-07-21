@@ -17,7 +17,7 @@ const StyledPopUp = styled.div`
     color: #000;
     transition: all linear .3s;
     padding-top: 38px;
-    padding-bottom: 72px;
+    padding-bottom: 78px;
     // border-radius: 0 0 5px 5px;
     opacity: .97;
     z-index: 100;
