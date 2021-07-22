@@ -17,8 +17,10 @@ const StyledUserButton = styled.button`
     background-repeat: no-repeat;
     background-image: url(${icon});
     transition: all linear .4s;
+    transform: scale(.75);
+    opacity: .9;
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1);
       };
 `
 

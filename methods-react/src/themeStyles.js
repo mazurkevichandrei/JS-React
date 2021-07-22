@@ -6,7 +6,7 @@ const themesList = {
         backgroundDivMain: '#e1e3e5',
 
         background: '#b1b1ba',
-        color: 'black',
+        color: '#494b4d',
 
         backgroundLiSource: '#6579ab',
         backgroundLiMutable: '#65ab74',
@@ -16,7 +16,7 @@ const themesList = {
         borderUlMutable: '#65ab74',
         borderUlUnmutable: '#ebac4d',
 
-        listNameFontColor: '#000',
+        listNameFontColor: '#494b4d',
         linkColor: '#f5f5f5',
 
         tableBackground: '#fff',
@@ -28,7 +28,7 @@ const themesList = {
         backgroundDivMain: '#444e57',
 
         background: 'rgb(49,49,49)',
-        color: '#fff',
+        color: '#f0f0f0',
 
         // backgroundLiSource: '#56b6cc',
         // backgroundLiMutable: '#5693cc',
@@ -42,7 +42,7 @@ const themesList = {
         borderUlMutable: '#8f8e91',
         borderUlUnmutable: '#8f8e91',
 
-        listNameFontColor: '#fff',
+        listNameFontColor: '#f0f0f0',
         linkColor: '#f5f5f5',
 
         tableBackground: '#484a49',

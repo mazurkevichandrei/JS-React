@@ -17,6 +17,7 @@ const StyledUserButtonReset = styled.button`
     background-repeat: no-repeat;
     background-image: url(${icon});
     transition: all linear .4s;
+    transform: scale(.8);
     &:hover {
         transform: scale(1.1);
       };
