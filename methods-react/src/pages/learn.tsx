@@ -16,6 +16,7 @@ import StyledCounterSection from '../styleditems/styledCounterSection';
 import StyledSection from '../styleditems/styledSection';
 import StyledMainArea from '../styleditems/styledMainArea';
 import StyledCounterSectionItem from '../styleditems/styledCounterSectionItem';
+import METHODS from '../const/methodsListMain';
 
 const Learn = () => {
     interface IState {
@@ -70,7 +71,7 @@ const Learn = () => {
                 </StyledCounterSectionItem>
                 <StyledCounterSectionItem>
                     <h5>Steps: {count.steps}</h5>
-                    <h5>| Correct: {count.correct} (33)</h5>
+                    <h5>| Correct: {count.correct} ({METHODS.All.length})</h5>
                     <h5>| Errors: {count.errors}</h5>
                     <h5>| Total: {total} % </h5>
                 </StyledCounterSectionItem>

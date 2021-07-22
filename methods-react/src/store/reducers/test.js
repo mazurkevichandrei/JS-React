@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import SaveToStorage from '../../SaveToStorage';
+import METHODS from '../../const/methodsListMain';
 
 export const counter = createSlice(
   {
@@ -38,7 +39,7 @@ export const counter = createSlice(
         },
         pubGameResult: (state, {payload}) => {
           const {mode, name} = payload
-          const total = Math.round(state.gameCorrect/33*100)
+          const total = Math.round(state.gameCorrect/METHODS.All.length*100)
           SaveToStorage(mode, name, 'NA' ,state.gameCorrect, state.gameErrors, total)
         },
         resetGame: (state) => {

@@ -7,7 +7,8 @@ const notMut = methods.filter(item => !mut.includes(item))
 const methodsList = {
     'Mutating' : mut,
     'Non-Mutating': notMut,
-    'Source': []
+    'Source': [],
+    'All': methods,
 }
 
 export default methodsList

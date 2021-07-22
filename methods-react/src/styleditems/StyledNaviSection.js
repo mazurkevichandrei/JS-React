@@ -11,11 +11,12 @@ background-color: ${(props) => props.theme.background};
 //margin-bottom: 5px;
 box-sizing: border-box;
 transition: all linear .3s;
--webkit-box-shadow: 0px 0px 15px 14px rgba(0, 0, 0, 0.2);
--moz-box-shadow: 0px 0px 15px 14px rgba(0, 0, 0, 0.2);
+webkit-box-shadow: 0px 0px 15px 14px rgba(0, 0, 0, 0.2);
+moz-box-shadow: 0px 0px 15px 14px rgba(0, 0, 0, 0.2);
 box-shadow: 0px 0px 15px 14px rgba(0, 0, 0, 0.2);
 // background: rgb(49,49,49);
-background: linear-gradient(180deg, rgba(49,49,49,1) 0%, rgba(13,13,13,1) 100%);
+background: ${(props) => props.theme.gradient};
 z-index: 1;
+transition: all linear .3s;
 `
 export default StyledNaviSection;
