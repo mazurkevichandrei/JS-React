@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import { Context } from '../context';
-import style from '../style';
 import StyledTitle from '../styleditems/styledFonts/styledTitle';
 import StyledSection from '../styleditems/styledSection';
 import StyledCounterSection from '../styleditems/styledCounterSection';

@@ -3,7 +3,6 @@ import {Context} from '../context';
 import { useSelector } from 'react-redux';
 import LIST_TYPES from '../const/indexConst';
 import List from '../List';
-import style from '../style';
 import MODE from '../const/mode';
 import StyledSubmit from '../styleditems/styledSubmit';
 // import ResutlList from '../ResultList';

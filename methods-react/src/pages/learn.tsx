@@ -3,13 +3,11 @@ import {Context} from '../context';
 import { useSelector } from 'react-redux';
 import LIST_TYPES from '../const/indexConst';
 import List from '../List';
-import style from '../style';
 import MODE from '../const/mode';
 import store from '../store/store';
 import { resetCounter} from '../store/reducers/test'
 import { resetTypes } from '../store/methods';
 import StyledRestart from '../styleditems/styledRestart';
-// import ResutlList from '../ResultList';
 import SaveLearnToStorage from '../SaveToStorage';
 import ERROR from '../const/errorMessage';
 import StyledCounterSection from '../styleditems/styledCounterSection';
