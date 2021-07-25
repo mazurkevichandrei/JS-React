@@ -17,6 +17,7 @@ import StyledCounterSection from '../styleditems/styledCounterSection';
 import StyledSection from '../styleditems/styledSection';
 import StyledMainArea from '../styleditems/styledMainArea';
 import StyledCounterSectionItem from '../styleditems/styledCounterSectionItem';
+import StyledPage from '../styleditems/styledPage';
 
 const Game = () => {
     const {setTop, setMessage, setCorrecrtPopUp, positionFixed} = useContext(Context)
@@ -84,7 +85,7 @@ const Game = () => {
         }
 
     return(
-        <div style={style.section}>
+        <StyledPage>
             <StyledSection isPositionFixed={positionFixed}>
             <StyledCounterSection>
                 <StyledCounterSectionItem>
@@ -101,7 +102,7 @@ const Game = () => {
                 <List header = {LIST_TYPES.MAIN} ismain='true' mode={MODE.GAME} checkHidden='true'/>
                 <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.GAME} checkHidden={checkIconIsHidden} isDisabledMove={isDisabledMove}/>
             </StyledMainArea>
-        </div>
+        </StyledPage>
     )
 }
 

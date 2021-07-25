@@ -17,6 +17,7 @@ import StyledSection from '../styleditems/styledSection';
 import StyledMainArea from '../styleditems/styledMainArea';
 import StyledCounterSectionItem from '../styleditems/styledCounterSectionItem';
 import METHODS from '../const/methodsListMain';
+import StyledPage from '../styleditems/styledPage';
 
 const Learn = () => {
     interface IState {
@@ -27,11 +28,7 @@ const Learn = () => {
         name: string
         count: number
     }
-    interface IStyles {
-        [key: string]: string
-    }
-    const sectionStyle: IStyles = style.section
-
+   
     const {setTop, setMessage, setCorrecrtPopUp, positionFixed} = useContext(Context)
     const userData: IUser | any = useSelector<IState>((state) => state.userName);
     const name = userData.name
@@ -63,7 +60,7 @@ const Learn = () => {
     }
 
     return(
-        <div style={sectionStyle}>
+        <StyledPage>
             <StyledSection isPositionFixed={positionFixed}>
             <StyledCounterSection>
                 <StyledCounterSectionItem>
@@ -82,7 +79,7 @@ const Learn = () => {
                 <List header={LIST_TYPES.MAIN} ismain='true' mode={MODE.LEARN}  checkHidden='true' isDisabledMove={false}/>
                 <List header = {LIST_TYPES.NON_MUTATING} mode={MODE.LEARN} checkHidden={false} isDisabledMove={false}/>
             </StyledMainArea>
-        </div>
+        </StyledPage>
     )
 }
 

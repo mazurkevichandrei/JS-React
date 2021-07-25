@@ -20,6 +20,7 @@ import StyledCounterSection from '../styleditems/styledCounterSection';
 import StyledCounterSectionItem from '../styleditems/styledCounterSectionItem';
 import StyledMainArea from '../styleditems/styledMainArea';
 import StyledTableName from '../styleditems/resultPageItems/styledTableName';
+import StyledPage from '../styleditems/styledPage';
 
 const Result = () => {
     const {positionFixed} = useContext(Context)
@@ -40,7 +41,7 @@ const Result = () => {
     const [filteredDataGame, setFilteredDataGame] = useState(storageToObject.filter(item => item.mode === MODE.GAME))
 
     return(
-        <div style={style.section}>
+        <StyledPage>
             <StyledSection isPositionFixed={positionFixed}>
                 <StyledCounterSection>
                     <StyledCounterSectionItem>
@@ -90,7 +91,7 @@ const Result = () => {
                     })}
                 </StyledTable>         
             </StyledMainArea>
-        </div>     
+        </StyledPage>     
     )
 }
 

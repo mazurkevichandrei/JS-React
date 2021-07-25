@@ -15,6 +15,7 @@ const Style = {
         flexDirection: 'column',
         margin: '0',
         padding: '0',
+        textAlign: 'left',
     },
     container: {
         display: 'flex',

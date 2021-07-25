@@ -21,7 +21,7 @@ const Footer = () => {
                     <StyledNaviItem><SlyledLink to='/game' >Game</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
                     <StyledNaviItem><SlyledLink to='/result' >Result</SlyledLink></StyledNaviItem>
                 </StyledNaviFooter>
-                  <StyledFooterLink href='https://teachmeskills.by/' target='blank'>
+                  <StyledFooterLink href='https://teachmeskills.by/' target='blank' title='Go to TMS'>
                     <img src={logo} style={{width: '120px'}} alt='More info about School'></img>
                   </StyledFooterLink>
                 <StyledFooterFont>Mazurkevich</StyledFooterFont>

@@ -5,7 +5,6 @@ type TStyledView  = {
 
 const StyledSection = styled.div<TStyledView>`
     display: flex;
-    display: flex;
     background: ${(props) => props.theme.backgroundDivMain};
     width: 100%;
     color: #fff;
