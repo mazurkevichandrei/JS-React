@@ -23,12 +23,6 @@ import StyledTableName from '../styleditems/resultPageItems/styledTableName';
 
 const Result = () => {
     const {positionFixed} = useContext(Context)
-    const ss={
-        display: 'flex',
-        alignItems: 'flex-start',
-        maxWidth: '1000px',
-        margin: '0 auto',
-    }
 
     const clearStorage = () => {
         localStorage.clear()

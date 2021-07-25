@@ -36,7 +36,6 @@ const Style = {
         alignItems: 'center',
         padding: '0 150px',
         paddingBottom: '10px',
-        display: 'flex',
         margin: '0 auto',
         backgroundColor: '#4d4d63',
         width: '100%',

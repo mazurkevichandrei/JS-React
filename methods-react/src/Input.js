@@ -5,7 +5,7 @@ import StyledInput from './styleditems/styledInput'
 
 const Input = ({action, value}) => {
     return (
-        <StyledInput type='text' value = {value} onChange={action}></StyledInput>
+        <StyledInput type='text' value = {value} onChange={action} data-testid='testinput'></StyledInput>
     )
 }
 

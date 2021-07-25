@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import StyledNaviSection from './StyledNaviSection';
 
 const StyledNaviSectionFooter = styled.div`
     position: fixed;

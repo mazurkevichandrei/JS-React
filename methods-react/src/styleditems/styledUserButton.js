@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import icon from '../image/ok.png';
 
 const StyledUserButton = styled.button`

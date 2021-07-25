@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import {useState} from 'react';
 import {Context} from './context';
 import Header from './Header';
@@ -17,23 +17,15 @@ import {
   Switch,
   Route,
 } from 'react-router-dom';
-//REDUX
+
 import { Provider } from 'react-redux';
 import store from './store/store';
 import PopUpWindow from './PopUpWindow/popUpWindow';
-import StyledNaviFooter from './styleditems/styledNaviFooter';
-import StyledNaviItem from './styleditems/styledNaviItem';
-import SlyledLink from './styleditems/styledLink';
-import StyledNaviSection from './styleditems/StyledNaviSection';
-import StyledNaviSectionFooter from './styleditems/styledNaviSectionFooter';
-import StyledNaviContainer from './styleditems/StyledNaviContainer';
-import StyledLine from './styleditems/styledFonts/styledLine';
-import StyledFooterFont from './styleditems/styledFonts/footerFont';
-import StyledFooterLink from './styleditems/styledFonts/footerLink';
-import LogoImage from './image/logo.svg';
+import Footer from './footer';
+
 
 function App () {
-  const logo = LogoImage
+  // const logo = LogoImage
   interface ITheme {
     [key: string]:string
   }
@@ -76,21 +68,7 @@ function App () {
                 <Route path='/MethodDesc'><MethodDesc method={takenMethod}/></Route>
                 <Route exact path=''><Home /></Route>
             </Switch>
-          {/* </div> */}
-          <StyledNaviSectionFooter>
-            <StyledNaviContainer>
-                <StyledNaviFooter>
-                    <StyledNaviItem><SlyledLink to='/' >Home</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
-                    <StyledNaviItem><SlyledLink to='/learn' >Learn</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
-                    <StyledNaviItem><SlyledLink to='/game' >Game</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
-                    <StyledNaviItem><SlyledLink to='/result' >Result</SlyledLink></StyledNaviItem>
-                </StyledNaviFooter>
-                  <StyledFooterLink href='https://teachmeskills.by/' target='blank'>
-                    <img src={logo} style={{width: '120px'}} alt='More info about School'></img>
-                  </StyledFooterLink>
-                <StyledFooterFont>Mazurkevich</StyledFooterFont>
-            </StyledNaviContainer> 
-        </StyledNaviSectionFooter>
+          <Footer />
           </Router>
         </StyledDivMain>
         </Provider>

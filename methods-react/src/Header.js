@@ -16,25 +16,23 @@ import StyledButtonContainer from './styleditems/styledButtonContainer';
 import UserNameArea from './UserNameArea/userNameArea';
 import StyledTitle from './styleditems/styledFonts/styledTitle';
 import StyledLine from './styleditems/styledFonts/styledLine';
+import checkActive from './checkIsActiveLink';
 
 const Header = ({data}) => {
 
-    // const [mode, setMode] = useState('')
-    // const setModeType = (modeType) => setMode(modeType)
-    
     return(
+        
         <div style={style.header}>
             <StyledTitle>{data}</StyledTitle>          
         <StyledNaviSection>
             <StyledNaviContainer>
                 <StyledNavi>
-                    <StyledNaviItem><SlyledLink to='/' >Home</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
+                    <StyledNaviItem><SlyledLink to='/' isActive={checkActive}>Home</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
                     <StyledNaviItem><SlyledLink to='/learn' >Learn</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
                     <StyledNaviItem><SlyledLink to='/game' >Game</SlyledLink></StyledNaviItem><StyledLine>|</StyledLine>
                     <StyledNaviItem><SlyledLink to='/result' >Result</SlyledLink></StyledNaviItem>
                 </StyledNavi> 
                 <UserNameArea />
-                {/* <span>MODE: {mode}</span> */}
                 <StyledButtonContainer>
                     <ThemeButton />
                 </StyledButtonContainer>

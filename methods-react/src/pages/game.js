@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState, useCallback} from 'react';
+import React, {useContext} from 'react';
 import {Context} from '../context';
 import { useSelector } from 'react-redux';
 import LIST_TYPES from '../const/indexConst';
@@ -10,7 +10,7 @@ import StyledSubmit from '../styleditems/styledSubmit';
 import store from '../store/store';
 import { resetTypes } from '../store/methods';
 import { turnCheckHidden, turnChangeMethodBtn, turnsubmitBtn, turnFlag } from '../store/reducers/buttonsProps';
-import { increaseGameCorrect, increaseGameErrors, resetGame, pubGameResult, Ss } from '../store/reducers/test';
+import { increaseGameCorrect, increaseGameErrors, resetGame, pubGameResult } from '../store/reducers/test';
 import methodsList from '../const/methodsListMain';
 import ERROR from '../const/errorMessage';
 import StyledCounterSection from '../styleditems/styledCounterSection';
@@ -36,9 +36,9 @@ const Game = () => {
     const flag = hiddenState.flag
     const srcLen = data.filter(item => item.type===LIST_TYPES.MAIN).length
 
-    const lengthSource = flag == 0 ? srcLen: flag
+    const lengthSource = flag === 0 ? srcLen: flag
 
-    lengthSource == 0 ? store.dispatch(turnsubmitBtn({val: false})) :  store.dispatch(turnsubmitBtn({val: true}))
+    lengthSource === 0 ? store.dispatch(turnsubmitBtn({val: false})) :  store.dispatch(turnsubmitBtn({val: true}))
 
     const submitAction = () => {
         store.dispatch(turnCheckHidden({val: false}))

@@ -1,11 +1,9 @@
-import {
-    Link,
-    NavLink
-  } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import styled from "styled-components";
 
-  import styled from "styled-components";
+const activeClassName = "nav-item-active";
 
-  const SlyledLink = styled(NavLink)`
+  const SlyledLink = styled(NavLink).attrs({ activeClassName })`
   color: ${(props) => props.theme.linkColor};
   text-decoration: none;
   opacity: .7;
@@ -13,7 +11,7 @@ import {
   &:hover {
     opacity: 1;
     }
-  &.active {
+  &.${activeClassName}  {
     opacity: 1;
   }
 `;

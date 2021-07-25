@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import icon from '../image/resetName.png';
 
 const StyledUserButtonReset = styled.button`
@@ -19,7 +19,7 @@ const StyledUserButtonReset = styled.button`
     transition: all linear .4s;
     transform: scale(.8);
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1);
       };
 `
 

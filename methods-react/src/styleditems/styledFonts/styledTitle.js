@@ -1,4 +1,4 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 import StyledListName from './styledListName';
 
 const StyledTitle = styled(StyledListName)`

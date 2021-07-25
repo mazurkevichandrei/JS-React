@@ -7,13 +7,11 @@ import style from './style';
 import LIST_TYPES from './const/indexConst';
 import MODE from './const/mode';
 import SlyledLink from './styleditems/styledLink'
-import { useSelector } from 'react-redux';
 import store from './store/store';
 import {changeType} from './store/methods';
 import {increaseSteps, increaseCorrect, decreaseCorrect, increaseErrors} from './store/reducers/test'
-
 import methodsList from './const/methodsListMain';
-import StyledResultListItem from './styleditems/resultListItem';
+
 
 function ListItem (props) {
 

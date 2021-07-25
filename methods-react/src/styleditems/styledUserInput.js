@@ -1,7 +1,6 @@
-import styled, {css} from "styled-components";
+import styled from "styled-components";
 
 const StyledUserInput = styled.input`
-    // height: 30px;
     padding: 5px;
     border-radius: 3px;
     outline: 0;
