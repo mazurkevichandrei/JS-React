@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/JS-React/static/css/main.4ab526f6.chunk.css",
+    "main.js": "/JS-React/static/js/main.d7bb1570.chunk.js",
+    "main.js.map": "/JS-React/static/js/main.d7bb1570.chunk.js.map",
+    "runtime-main.js": "/JS-React/static/js/runtime-main.c85d6026.js",
+    "runtime-main.js.map": "/JS-React/static/js/runtime-main.c85d6026.js.map",
+    "static/js/2.357042b4.chunk.js": "/JS-React/static/js/2.357042b4.chunk.js",
+    "static/js/2.357042b4.chunk.js.map": "/JS-React/static/js/2.357042b4.chunk.js.map",
+    "static/js/3.94fbec24.chunk.js": "/JS-React/static/js/3.94fbec24.chunk.js",
+    "static/js/3.94fbec24.chunk.js.map": "/JS-React/static/js/3.94fbec24.chunk.js.map",
+    "index.html": "/JS-React/index.html",
+    "static/css/main.4ab526f6.chunk.css.map": "/JS-React/static/css/main.4ab526f6.chunk.css.map",
+    "static/js/2.357042b4.chunk.js.LICENSE.txt": "/JS-React/static/js/2.357042b4.chunk.js.LICENSE.txt",
+    "static/media/Clean.a1e30243.png": "/JS-React/static/media/Clean.a1e30243.png",
+    "static/media/Day.495ad8cb.png": "/JS-React/static/media/Day.495ad8cb.png",
+    "static/media/Search.a6223f4d.png": "/JS-React/static/media/Search.a6223f4d.png",
+    "static/media/logo.4c35cc9f.svg": "/JS-React/static/media/logo.4c35cc9f.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c85d6026.js",
+    "static/js/2.357042b4.chunk.js",
+    "static/css/main.4ab526f6.chunk.css",
+    "static/js/main.d7bb1570.chunk.js"
+  ]
+}
