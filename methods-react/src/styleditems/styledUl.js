@@ -7,15 +7,15 @@ const StyledUl = styled.ul`
   align-items: stretch;
   list-style: none;
   margin: 5px;
-  padding: 0 5px;
-  border: 2px solid ${(props) => props.theme.borderUlUnmutable};
+  padding: 0 6px;
+  // border: 2px solid ${(props) => props.theme.borderUlUnmutable};
   max-width: 400px;
   width: 100%;
     ${props => props.ismutable && css`
-    border: 2px solid ${(props) => props.theme.borderUlMutable};
+    // border: 2px solid ${(props) => props.theme.borderUlMutable};
   `};
     ${props => props.ismain && css`
-    border: 2px solid ${(props) => props.theme.borderUlSource};
+    // border: 2px solid ${(props) => props.theme.borderUlSource};
 `};
 `;
 

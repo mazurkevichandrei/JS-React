@@ -10,16 +10,39 @@ const Style = {
         opacity: '.7',
         visibility: 'hidden'
     },
+    section: {
+        display: 'flex',
+        flexDirection: 'column',
+        margin: '0',
+        padding: '0',
+        textAlign: 'left',
+    },
     container: {
         display: 'flex',
         justifyContent: 'center',
-        maxWidth: '800px',
+        maxWidth: '1000px',
         width: '100%',
         margin: '0 auto',
-        border: '1px solid black',
+        // border: '1px solid black',
         borderTop: '0',
         boxSizing: 'border-box',
+        height: '100%',
+        padding: '0',
       },
+    counterData: {
+        // position: 'fixed',
+        // top: '0',
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        padding: '0 150px',
+        paddingBottom: '10px',
+        margin: '0 auto',
+        backgroundColor: '#4d4d63',
+        width: '100%',
+        color: '#fff',
+        boxSizing: 'border-box',
+    },
     counter: {
         color: '#f05181'
     },
@@ -29,12 +52,15 @@ const Style = {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        maxWidth: '800px',
+        //backgroundColor: '#4d4d63',
+        color: '#f5f5f7',
+        // maxWidth: '1000px',
         width: '100%',
-        padding: '0 7px',
+        // padding: '0 7px',
         margin: '0 auto',
-        border: '1px solid black',
+        // border: '1px solid black',
         boxSizing: 'border-box',
+        //paddingBottom: '5px',
     },
     itemtext: {
         width: '100%'
@@ -48,6 +74,13 @@ const Style = {
         marginBottom: '10px',
         padding: '0'
     },
+    h5: {
+        margin: '0',
+        paddingBottom: '6px',
+    },
+    h1: {
+        margin: '10px',
+    }
 }
 
 export default Style

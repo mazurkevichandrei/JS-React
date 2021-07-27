@@ -1,5 +1,5 @@
 const HEADER = {
-    HEADER_NAME: 'HEADER'
+    HEADER_NAME: '- Learn JS Methods -'
 }
 
 export default HEADER;

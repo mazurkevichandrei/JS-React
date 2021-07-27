@@ -1,50 +1,91 @@
-import React, {useContext} from 'react';
-import {Context} from './context';
+import React, {useEffect} from 'react';
 import { useState } from 'react';
 import './App.css';
 import ListItem from './ListItem';
 import style from './style';
 import StyledUl from './styleditems/styledUl'
-import StyledResetButton from './styleditems/StylerReset'
-// import StyledInput from './styleditems/styledInput'
+import StyledResetButton from './styleditems/StylerReset';
+import StyledInputContainer from './styleditems/StyledInputContainer';
 import Input from './Input'
+//REDUX
+import { useSelector } from 'react-redux';
+import IncludeFilter from './const/includeFilter';
+import CompareFilter from './const/compareFilter';
+import MODE from './const/mode';
+import methodsList from './const/methodsListMain';
+import StyledResultListItem from './styleditems/resultListItem';
+import StyledListName from './styleditems/styledFonts/styledListName';
+import StyledFilterInfo from './styleditems/styledFonts/styledFilterInfo'
 
 const  List = (props) => {
-  let {allMethods} = useContext(Context)
-  const [filteredData, setFilteredData] = useState(allMethods)
-  const [filteredDataToShow, setFilteredDataToShow] = useState(allMethods)
+
+    const ss={
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      width: '100%',
+      flexDirection: 'row'
+    }
+   
+    const checkResult = (method) => {
+      const methodList = methodsList[props.header]
+      const isCorrect1 =  methodList.includes(method) ? true : false;
+      return(
+          <StyledResultListItem  isCorrect={isCorrect1} isHidden={props.checkHidden} isRender={props.ismain}></StyledResultListItem>
+      )
+  }
+
+  const newList = useSelector((state) => state.methods);
+  
+  const data = props.mode === MODE.LEARN ? newList.value : newList.gameValue
+
+  const [filteredDataToShow, setFilteredDataToShow] = useState(data)
   const [filterValue, setFilterValue] = useState('')
   
-  const filterData = (evt) => {
+  const filterData =  (evt) => {
     setFilterValue(evt.target.value)
     let filter = evt.target.value.toLowerCase()
-    const runFilter = () => setFilteredData(allMethods.filter(item => item.name.toLowerCase().includes(filter)))
-    setFilteredDataToShow(allMethods.filter(item => item.name.toLowerCase().includes(filter)))
-    if (evt.target.value === '') {
-        runFilter()
-    } else {
-        setTimeout(() => {
-            if (filter === evt.target.value.toLowerCase()) {
-                runFilter()
-            }
-        }, 2000)
-    }
+    setFilteredDataToShow(IncludeFilter(data, filter))
 }
   
-  const resetFilter = () => {
-    setFilterValue('')
-    setFilteredDataToShow(allMethods)
-    setFilteredData(allMethods)
-  }
+    const isShowResetButton = filterValue ? false : true;
+
+    const resetFilter = () => {
+      setFilterValue('')
+      setFilteredDataToShow(CompareFilter(data, props.header))
+    }
+    
+    const listTorender = filterValue !=='' ? filteredDataToShow : data
+    useEffect (
+      ()=>
+      {setFilteredDataToShow(IncludeFilter(data,filterValue))},
+        [data,filterValue]
+        )
   
   return (
     <StyledUl ismutable={props.ismutable} ismain={props.ismain}>
-      <h2 style={style.h2}>{props.header}</h2>
-      <h4 style={style.h4}>{filteredDataToShow.filter(item => item.type===props.header).length} from {(allMethods.filter(item => item.type===props.header)).length} contains '<span style={style.counter}>{filterValue}</span>'</h4>
-    <Input action={filterData} value={filterValue}/>
-    <StyledResetButton onClick={resetFilter}>RESET FILTER</StyledResetButton>
-      {filteredData.filter(item => item.type===props.header).map(item => {
-        return <ListItem data = {item} key = {item.id} ismutable={props.ismutable} ismain={props.ismain} type={item.type} methodType={props.header}/>
+      <StyledListName>{props.header}</StyledListName>
+      <StyledFilterInfo>
+        {CompareFilter(filteredDataToShow,props.header).length} from {CompareFilter(data, props.header).length} contains '<span style={style.counter}>{filterValue}</span>'
+      </StyledFilterInfo>
+      <StyledInputContainer>
+        <Input action={filterData} value={filterValue}/>
+        <StyledResetButton onClick={resetFilter} isShow={isShowResetButton}></StyledResetButton>
+      </StyledInputContainer>
+      
+      { listTorender.filter(item => item.type===props.header).map(item => {
+        return (<div style={ss}><ListItem 
+        data = {item} 
+        key = {item.id} 
+        ismutable={props.ismutable} 
+        ismain={props.ismain} 
+        type={item.type} 
+        methodType={props.header}
+        mode={props.mode}
+        isDisabledMove={props.isDisabledMove}/>
+        {checkResult(item.name)}
+        </div>
+        )
       })}
     </StyledUl>
   ); 
